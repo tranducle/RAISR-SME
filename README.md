@@ -6,6 +6,9 @@
 
 *A 25-item, six-dimension self-assessment instrument — and the public-data evidence behind it.*
 
+▸ **[Take the assessment in your browser → raisr-sme.vercel.app](https://raisr-sme.vercel.app)**
+
+[![live site](https://img.shields.io/badge/live-raisr--sme.vercel.app-orange)](https://raisr-sme.vercel.app)
 ![instrument](https://img.shields.io/badge/instrument-bank%20v1%20·%20frozen-orange)
 ![items](https://img.shields.io/badge/items-25%20in%206%20dimensions-orange)
 ![engines](https://img.shields.io/badge/engines-3%20·%20bit--for--bit%20parity-brightgreen)
@@ -39,6 +42,38 @@ This repository holds the two halves that a reader needs in order to check the w
 
 **Higher score = more exposure**, not more maturity. This is the single most common misreading of
 the instrument, so it is stated on the bank, in every engine, and on every result surface.
+
+---
+
+## 🌐 The companion site — <https://raisr-sme.vercel.app>
+
+A reader who wants the argument rather than the source code, and a small firm that wants its own
+score rather than either, can both start there. Three pages, no account, no install:
+
+| Page | What it is |
+| --- | --- |
+| [**Overview**](https://raisr-sme.vercel.app) | The paper's argument in visuals — why AI reached the small end of the economy and governance did not, why the security paradox is a *measurement* artefact, and what survives once prediction is off the table. Including the hypothesis that failed. |
+| [**Item bank**](https://raisr-sme.vercel.app/items) | All 25 items in full, with each one's polarity, weight, and the public-survey variable it is anchored to. |
+| [**Self-assessment**](https://raisr-sme.vercel.app/assess) | The live questionnaire: 25 questions in six steps, ~20 minutes, ending in a score, a band, a per-dimension breakdown, and a ranked list of what to fix first. |
+
+Four things worth knowing before you open it:
+
+- **Nothing you type leaves your browser.** Scoring runs client-side; there is no backend, no
+  account, no storage, and no analytics. The site is served under a content-security policy of
+  `default-src 'none'` with `script-src 'self'`, so the claim is enforced by the browser rather than
+  promised in a privacy notice — it cannot load third-party code even if it tried to.
+- **It runs the engine in this repository.** The assessment is powered by `instrument/scoring.js`;
+  the deployed copy and the committed copy differ only in their comment headers, and every line that
+  executes is identical. So the number the site gives you is the number
+  `python3 instrument/scoring.py` gives you, to the last bit.
+- **Every figure on it is drawn for the site**, not lifted from the paper, and each one is
+  accompanied by a prose description of the same content — so no claim is carried by a picture alone.
+- **It is `noindex` while the paper is under review**, and carries no author, affiliation, or contact
+  detail, for the same reason this repository does not.
+
+The site is a presentation of the instrument, not a second result. Where it makes a choice the paper
+does not — the band cut points, the action ranking, the peer-comparison anchor — it says so on the
+page where the choice appears.
 
 ---
 
