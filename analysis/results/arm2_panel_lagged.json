@@ -1,0 +1,284 @@
+{
+  "preregistered_run": true,
+  "extends": "earlier CSLS panel specification, superseded by this script",
+  "posture": "6 items (bgoverna, bgovernb, incidman, rulesa, gova, insurex)",
+  "frames": {
+    "business": {
+      "frame": "business",
+      "frame_rows": 3109,
+      "unique_orgs": 1724,
+      "orgs_ge2_waves": 592,
+      "breach_yes": 604,
+      "breach_no": 2505,
+      "harmonized_n": 1344,
+      "models": [
+        {
+          "label": "contemporaneous (full panel)",
+          "n": 3061,
+          "n_clusters": 1717,
+          "coef": 0.17814145989282587,
+          "or_per_sd": 1.1949943530520177,
+          "ci95_or": [
+            1.077494714429336,
+            1.3253072007712963
+          ],
+          "p": 0.0007426053709036515,
+          "direction": "paradox"
+        },
+        {
+          "label": "contemporaneous (lagged-sample)",
+          "n": 1935,
+          "n_clusters": 591,
+          "coef": 0.14403310639629835,
+          "or_per_sd": 1.1549223432087918,
+          "ci95_or": [
+            1.000236907580898,
+            1.3335296955486586
+          ],
+          "p": 0.049623788705321324,
+          "direction": "paradox"
+        },
+        {
+          "label": "lagged, harmonized sample",
+          "n": 1344,
+          "n_clusters": 576,
+          "coef": -0.02931464359201678,
+          "or_per_sd": 0.9711108625812395,
+          "ci95_or": [
+            0.8575574538931389,
+            1.0997004377280992
+          ],
+          "p": 0.644053579145673,
+          "direction": "protective"
+        },
+        {
+          "label": "firm-FE, harmonized sample",
+          "n": 1344,
+          "n_clusters": 576,
+          "coef_pp": -0.010785288739914002,
+          "ci95_pp": [
+            -0.0224614756286657,
+            0.0008908981488376967
+          ],
+          "p": 0.07023100887482903,
+          "direction": "protective"
+        },
+        {
+          "label": "firm-FE, maximal sample (robustness)",
+          "n": 1382,
+          "n_clusters": 591,
+          "coef_pp": -0.010435893743771,
+          "ci95_pp": [
+            -0.02142185271235208,
+            0.0005500652248100809
+          ],
+          "p": 0.06262721173107115,
+          "direction": "protective"
+        },
+        {
+          "label": "contemporaneous, 5-item (robustness)",
+          "n": 3059,
+          "n_clusters": 1715,
+          "coef": 0.15835273183504064,
+          "or_per_sd": 1.1715793751753345,
+          "ci95_or": [
+            1.0502089296336254,
+            1.3069763488062038
+          ],
+          "p": 0.004540793243303252,
+          "direction": "paradox"
+        },
+        {
+          "label": "lagged, 5-item (robustness)",
+          "n": 1344,
+          "n_clusters": 576,
+          "coef": -0.048994336802186005,
+          "or_per_sd": 0.9521865221038662,
+          "ci95_or": [
+            0.8392669909530283,
+            1.0802988591827032
+          ],
+          "p": 0.44682488464211656,
+          "direction": "protective"
+        }
+      ],
+      "lagged_bivariate": {
+        "n": 1344,
+        "hi_rate": 0.1941860465116279,
+        "lo_rate": 0.18181818181818182
+      },
+      "power": {
+        "harmonized_n": 1344,
+        "outcome_rate": 0.18973214285714285,
+        "detectable_or_per_sd_80pct": 1.2151936074663117,
+        "n_required_for_or13": 741.7008713505878
+      }
+    },
+    "charity": {
+      "frame": "charity",
+      "frame_rows": 1767,
+      "unique_orgs": 813,
+      "orgs_ge2_waves": 331,
+      "breach_yes": 330,
+      "breach_no": 1437,
+      "harmonized_n": 0,
+      "models": [
+        {
+          "label": "contemporaneous (full panel)",
+          "n": 0,
+          "error": "n<50 after complete cases"
+        },
+        {
+          "label": "contemporaneous (lagged-sample)",
+          "n": 0,
+          "error": "n<50 after complete cases"
+        },
+        {
+          "label": "lagged, harmonized sample",
+          "n": 0,
+          "error": "n<50 after complete cases"
+        },
+        {
+          "label": "firm-FE, harmonized sample",
+          "n": 0,
+          "error": "zero-size array to reduction operation maximum which has no identity"
+        },
+        {
+          "label": "firm-FE, maximal sample (robustness)",
+          "n": 954,
+          "n_clusters": 332,
+          "coef_pp": 0.006463865177122441,
+          "ci95_pp": [
+            0.0004904187124791992,
+            0.012437311641765682
+          ],
+          "p": 0.03393218664571599,
+          "direction": "paradox"
+        },
+        {
+          "label": "contemporaneous, 5-item (robustness)",
+          "n": 0,
+          "error": "n<50 after complete cases"
+        },
+        {
+          "label": "lagged, 5-item (robustness)",
+          "n": 0,
+          "error": "n<50 after complete cases"
+        }
+      ],
+      "lagged_bivariate": null,
+      "power": null
+    },
+    "pooled": {
+      "frame": "pooled",
+      "frame_rows": 4876,
+      "unique_orgs": 2530,
+      "orgs_ge2_waves": 928,
+      "breach_yes": 934,
+      "breach_no": 3942,
+      "harmonized_n": 1347,
+      "models": [
+        {
+          "label": "contemporaneous (full panel)",
+          "n": 3061,
+          "n_clusters": 1717,
+          "coef": 0.17814145989282587,
+          "or_per_sd": 1.1949943530520177,
+          "ci95_or": [
+            1.077494714429336,
+            1.3253072007712963
+          ],
+          "p": 0.0007426053709036515,
+          "direction": "paradox"
+        },
+        {
+          "label": "contemporaneous (lagged-sample)",
+          "n": 1940,
+          "n_clusters": 596,
+          "coef": 0.14380290181726774,
+          "or_per_sd": 1.1546565053966753,
+          "ci95_or": [
+            1.000272948484118,
+            1.3328678411980779
+          ],
+          "p": 0.049565971145944146,
+          "direction": "paradox"
+        },
+        {
+          "label": "lagged, harmonized sample",
+          "n": 1347,
+          "n_clusters": 578,
+          "coef": -0.02378385348337673,
+          "or_per_sd": 0.9764967533206463,
+          "ci95_or": [
+            0.8625706266754716,
+            1.1054699519747497
+          ],
+          "p": 0.7070904299318531,
+          "direction": "protective"
+        },
+        {
+          "label": "firm-FE, harmonized sample",
+          "n": 1347,
+          "n_clusters": 578,
+          "coef_pp": -0.008866542580606573,
+          "ci95_pp": [
+            -0.020551655052263904,
+            0.0028185698910507557
+          ],
+          "p": 0.13696188631527223,
+          "direction": "protective"
+        },
+        {
+          "label": "firm-FE, maximal sample (robustness)",
+          "n": 2343,
+          "n_clusters": 927,
+          "coef_pp": 0.0010698179801474264,
+          "ci95_pp": [
+            -0.006077386830244405,
+            0.008217022790539258
+          ],
+          "p": 0.7692362273736384,
+          "direction": "paradox"
+        },
+        {
+          "label": "contemporaneous, 5-item (robustness)",
+          "n": 3059,
+          "n_clusters": 1715,
+          "coef": 0.15835273183504064,
+          "or_per_sd": 1.1715793751753345,
+          "ci95_or": [
+            1.0502089296336254,
+            1.3069763488062038
+          ],
+          "p": 0.004540793243303252,
+          "direction": "paradox"
+        },
+        {
+          "label": "lagged, 5-item (robustness)",
+          "n": 1347,
+          "n_clusters": 578,
+          "coef": -0.044130553807288676,
+          "or_per_sd": 0.9568290316454473,
+          "ci95_or": [
+            0.8436919400350885,
+            1.0851375393742513
+          ],
+          "p": 0.49186204813208345,
+          "direction": "protective"
+        }
+      ],
+      "lagged_bivariate": {
+        "n": 1347,
+        "hi_rate": 0.19401197604790418,
+        "lo_rate": 0.18359375
+      },
+      "power": {
+        "harmonized_n": 1347,
+        "outcome_rate": 0.1900519673348181,
+        "detectable_or_per_sd_80pct": 1.214777303112042,
+        "n_required_for_or13": 740.7451003426365
+      }
+    }
+  }
+}

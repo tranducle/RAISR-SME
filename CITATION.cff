@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: >-
+  RAISR-SME: a rapid AI-security readiness instrument for small and
+  medium enterprises
+message: >-
+  This repository accompanies a manuscript that is currently under peer
+  review. Author and affiliation metadata is withheld for anonymous
+  review and will be added on acceptance. Until then, please cite the
+  repository itself rather than attributing it to any individual.
+type: software
+authors:
+  - name: Anonymous (author details withheld for peer review)
+abstract: >-
+  Reference implementation of the RAISR-SME instrument (item bank v1) and
+  the analysis code behind its evaluation. The instrument is a 25-item,
+  six-dimension self-assessment that returns a 0-100 exposure score, an
+  ordinal band, and a ranked list of remediations, designed for
+  completion by a single respondent in about twenty minutes. The
+  repository contains three independent scoring engines verified against
+  one another, a test suite covering polarity, monotonicity, band
+  boundaries and cross-engine parity, and the scripts producing the
+  cross-sectional (UK Cyber Security Breaches Survey, 2023-2025) and
+  panel (UK Cyber Security Longitudinal Survey, waves 1-4) analyses. No
+  survey microdata is redistributed; every source is documented with its
+  public access route and a checksum.
+keywords:
+  - cybersecurity
+  - small and medium enterprises
+  - risk assessment
+  - self-assessment instrument
+  - artificial intelligence adoption
+  - survey methodology
+  - reproducibility
+license: MIT
+version: "1.0.0"
+date-released: "2026-08-20"

@@ -1,0 +1,523 @@
+{
+  "meta": {
+    "name": "RAISR-SME Instrument Bank",
+    "version": "v1",
+    "status": "FROZEN 2026-08-18",
+    "frozen": "2026-08-18",
+    "item_count": 25,
+    "dimension_count": 6,
+    "scale": "risk 0-100, higher = more exposure",
+    "licence": "CC BY 4.0"
+  },
+  "freeze_record": {
+    "weights": "unchanged from the draft vector; the +/-20% weight-sensitivity suite in analysis/instrument_validation.py was executed against exactly these weights, and changing them would invalidate that reported result for no measured gain",
+    "items": "25 items retained; two artifact-level defects corrected before freezing (see fixes_at_freeze). Neither correction changes any number reported in the manuscript: score_vector() depends only on (dimension -> item-id map, weights, bands), and all three are byte-identical to the draft.",
+    "fixes_at_freeze": [
+      "POLARITY. The draft declared one global response scale (Yes=0, No=1) while score_vector() consumes item values as risk directly. For 5 of 25 items 'Yes' is the risky answer (A1-A4 AI use/exposure; V1 cloud dependence), so a respondent applying the declared scale would score an AI-free firm at AI-exposure 100 and a heavy AI user at 0 - the dimension inverted. Every item now declares risk_when explicitly, and response_scale gives the mapping per polarity.",
+      "DOUBLE-BARREL / DOUBLE-COUNT. Draft D2 asked 'Are important business files backed up, and has restoring from backup been tested in the last year?' - two questions in one item, and its first clause duplicated H4 ('Are important files backed up?'). A firm without backups was therefore charged risk twice, across two separately weighted dimensions (hygiene .25 and data .10). D2 is now restore-testing only; backup existence is asked once, at H4."
+    ]
+  },
+  "dimensions": {
+    "ai_exposure": {
+      "label": "AI/LLM exposure",
+      "weight": 0.15,
+      "criterion_status": "content validity only (Eurostat anchor)",
+      "polarity_note": "exposure dimension - all items score risk on 'Yes'",
+      "items": [
+        {
+          "id": "A1",
+          "q": "Does your business use at least one AI tool (chatbot, image recognition, text generation, automation)?",
+          "risk_when": "yes",
+          "anchor": "Eurostat isoc_eb_ai E_AI_TANY, EU27 2025: 10-49 emp 17.0%, 50-249 30.4%, 250+ 55.0%"
+        },
+        {
+          "id": "A2",
+          "q": "Do staff use generative-AI tools (chatbots that write text or code) in their work?",
+          "risk_when": "yes",
+          "anchor": "SME-TEAM LLM risk surface (Sarker et al. 2026)"
+        },
+        {
+          "id": "A3",
+          "q": "Does your business use two or more different AI technologies?",
+          "risk_when": "yes",
+          "anchor": "Eurostat E_AI_TGE2 (rate extracted 2026-08-18, see coverage report)"
+        },
+        {
+          "id": "A4",
+          "q": "Do any AI tools you use process personal data (customers' or employees')?",
+          "risk_when": "yes",
+          "anchor": "Eurostat E_AI_PDI (country-level only; EU27 not published), BE 2024: 1.0% (10-49 emp), 1.9% (50-249), 4.1% (250+) of enterprises"
+        }
+      ]
+    },
+    "data_handling": {
+      "label": "Data handling",
+      "weight": 0.1,
+      "criterion_status": "content validity only",
+      "items": [
+        {
+          "id": "D1",
+          "q": "Is there a written policy for how customer and employee data is stored and shared?",
+          "risk_when": "no",
+          "anchor": "SME-TEAM data-governance catalog items"
+        },
+        {
+          "id": "D2",
+          "q": "Has restoring from backup been tested in the last year?",
+          "risk_when": "no",
+          "anchor": "No CSBS restore-test variable in any wave (coverage audit, 2026-08-18) - content validity only; backup existence is asked once, at H4"
+        },
+        {
+          "id": "D3",
+          "q": "Do you know every place your business data is stored, including cloud services?",
+          "risk_when": "no",
+          "anchor": "SME-TEAM catalog"
+        }
+      ]
+    },
+    "security_hygiene": {
+      "label": "Security hygiene",
+      "weight": 0.25,
+      "criterion_status": "criterion core (CSBS variables)",
+      "items": [
+        {
+          "id": "H1",
+          "q": "Does your business have a formal cybersecurity policy?",
+          "risk_when": "no",
+          "anchor": "CSBS 9404 policy_comb: Yes 2,070 / No 37 (among asked)"
+        },
+        {
+          "id": "H2",
+          "q": "Do staff receive cybersecurity training?",
+          "risk_when": "no",
+          "anchor": "CSBS 9404 trained: No 2,302 / Yes 1,460 / DK 73"
+        },
+        {
+          "id": "H3",
+          "q": "Does the business hold cyber insurance?",
+          "risk_when": "no",
+          "anchor": "CSBS 9404 insurex: specific 276 / broader 845 / not insured 534 / DK 523 / NA 1,657"
+        },
+        {
+          "id": "H4",
+          "q": "Are important files backed up?",
+          "risk_when": "no",
+          "anchor": "No CSBS backup variable in any wave (coverage audit, 2026-08-18) - content validity only"
+        },
+        {
+          "id": "H5",
+          "q": "Are admin/privileged accounts limited to staff who need them?",
+          "risk_when": "no",
+          "anchor": "CSBS controls item where present (coverage-audited)"
+        },
+        {
+          "id": "H6",
+          "q": "Is security-monitoring software installed on business devices?",
+          "risk_when": "no",
+          "anchor": "CSBS monitoring item where present (coverage-audited)"
+        }
+      ]
+    },
+    "governance": {
+      "label": "Governance & accountability",
+      "weight": 0.15,
+      "criterion_status": "secondary (CSLS/CSBS policy proxies)",
+      "items": [
+        {
+          "id": "G1",
+          "q": "Is one named person responsible for cybersecurity?",
+          "risk_when": "no",
+          "anchor": "CSLS bgoverna Yes 2,521; bgovernb Yes 3,006 (panel rows)"
+        },
+        {
+          "id": "G2",
+          "q": "Does the owner or board review cybersecurity at least once a year?",
+          "risk_when": "no",
+          "anchor": "CSLS governance battery (rulesa/gova)"
+        },
+        {
+          "id": "G3",
+          "q": "Are responsibilities for handling a cyber incident written down?",
+          "risk_when": "no",
+          "anchor": "CSLS incidman (written incident processes); shares its anchor with I1 - distinct construct, see freeze_record.known_and_accepted"
+        },
+        {
+          "id": "G4",
+          "q": "Are security requirements checked when choosing suppliers or cloud services?",
+          "risk_when": "no",
+          "anchor": "CSLS supplyrisk item where present (coverage-audited)"
+        },
+        {
+          "id": "G5",
+          "q": "Do staff know how to report a suspected cyber problem?",
+          "risk_when": "no",
+          "anchor": "SME-TEAM accountability catalog"
+        }
+      ]
+    },
+    "vendor_dependence": {
+      "label": "Vendor dependence",
+      "weight": 0.1,
+      "criterion_status": "content validity only",
+      "polarity_note": "V1 is an exposure item (risk on 'Yes'); V2 and V3 are gap items",
+      "items": [
+        {
+          "id": "V1",
+          "q": "Do core business operations depend on cloud or online services (email, storage, accounting)?",
+          "risk_when": "yes",
+          "anchor": "SME-TEAM dependency catalog"
+        },
+        {
+          "id": "V2",
+          "q": "Is there a current list of the software and services the business depends on?",
+          "risk_when": "no",
+          "anchor": "SME-TEAM catalog"
+        },
+        {
+          "id": "V3",
+          "q": "When adopting a new tool, is its security track record checked (e.g., known exploited vulnerabilities)?",
+          "risk_when": "no",
+          "anchor": "CISA KEV snapshot 2026-08-17: 1,666 entries; Microsoft 383, Cisco 96, Apple 93, Adobe 80, Google 72"
+        }
+      ]
+    },
+    "incident_readiness": {
+      "label": "Incident readiness",
+      "weight": 0.25,
+      "criterion_status": "criterion core (CSBS/CSLS incident items)",
+      "items": [
+        {
+          "id": "I1",
+          "q": "Is there a written plan for responding to a cyber incident?",
+          "risk_when": "no",
+          "anchor": "CSLS incidman; CSBS incident item where present (coverage-audited)"
+        },
+        {
+          "id": "I2",
+          "q": "Do you know who to contact first in the first hour of an incident?",
+          "risk_when": "no",
+          "anchor": "SME-TEAM incident catalog"
+        },
+        {
+          "id": "I3",
+          "q": "Has the incident plan been tested or exercised in the last year?",
+          "risk_when": "no",
+          "anchor": "CSLS exercise (W2+)"
+        },
+        {
+          "id": "I4",
+          "q": "Are you aware of actively exploited vulnerabilities affecting tools you use?",
+          "risk_when": "no",
+          "anchor": "CISA KEV: dateAdded 2021-11-03 to 2026-08-17; knownRansomwareCampaignUse field"
+        }
+      ]
+    }
+  },
+  "display_order": [
+    "security_hygiene",
+    "incident_readiness",
+    "ai_exposure",
+    "data_handling",
+    "governance",
+    "vendor_dependence"
+  ],
+  "weights": {
+    "security_hygiene": 0.25,
+    "incident_readiness": 0.25,
+    "ai_exposure": 0.15,
+    "data_handling": 0.1,
+    "governance": 0.15,
+    "vendor_dependence": 0.1
+  },
+  "bands": {
+    "Low": [
+      0,
+      40
+    ],
+    "Medium": [
+      40,
+      65
+    ],
+    "High": [
+      65,
+      85
+    ],
+    "Critical": [
+      85,
+      101
+    ]
+  },
+  "response_scale": {
+    "options": [
+      "Yes",
+      "No",
+      "Don't know"
+    ],
+    "risk_when_no": {
+      "Yes": 0,
+      "No": 1,
+      "Don't know": 0.5
+    },
+    "risk_when_yes": {
+      "Yes": 1,
+      "No": 0,
+      "Don't know": 0.5
+    },
+    "note": "Each item declares risk_when. Gap items (risk_when='no') score risk when a control is ABSENT. Exposure items (risk_when='yes': A1, A2, A3, A4, V1) score risk when the exposure is PRESENT. A single global Yes=0 mapping inverts the AI-exposure dimension and V1."
+  },
+  "scoring_note": "DK scored 0.5 (neutral, flagged in output); dimension score = mean item risk x 100; total = weighted mean of dimension scores. analysis/instrument_validation.py consumes risk-coded response vectors (0/0.5/1) directly, so risk_when is the respondent-facing mapping that produces those vectors.",
+  "action_plans": {
+    "security_hygiene": {
+      "Low": "Enable multi-factor authentication and daily backups; get a basic policy.",
+      "Medium": "Add staff training and cyber insurance review.",
+      "High": "Restrict admin accounts; verify backup restoration quarterly.",
+      "Critical": "Immediate hygiene remediation sprint; external review."
+    },
+    "incident_readiness": {
+      "Low": "Write a one-page who-to-call plan.",
+      "Medium": "Document the plan; assign a named owner.",
+      "High": "Exercise the plan annually.",
+      "Critical": "Run a tabletop exercise now; plug detected gaps."
+    },
+    "ai_exposure": {
+      "Low": "Inventory which AI tools staff actually use.",
+      "Medium": "Add a no-personal-data rule for public AI tools.",
+      "High": "Formal usage policy; vendor AI-terms review.",
+      "Critical": "Stop high-risk AI use until governed."
+    },
+    "data_handling": {
+      "Low": "Map where business data lives.",
+      "Medium": "Written data-handling policy; backups tested.",
+      "High": "Encrypt sensitive data; test restore twice a year.",
+      "Critical": "Data audit + breach-report readiness review."
+    },
+    "governance": {
+      "Low": "Name one person responsible for security.",
+      "Medium": "Annual owner/board security review on the calendar.",
+      "High": "Written responsibilities; supplier security checks.",
+      "Critical": "Governance review with external support."
+    },
+    "vendor_dependence": {
+      "Low": "List your critical software and services.",
+      "Medium": "Check security track records before adoption.",
+      "High": "Supplier security requirements in contracts.",
+      "Critical": "Dependency review; contingency for key vendors."
+    }
+  },
+  "archetypes": [
+    {
+      "id": "solo-micro-no-governance",
+      "size_band": "0-9",
+      "pattern": "none",
+      "responses": {
+        "H1": 1.0,
+        "H2": 1.0,
+        "H3": 1.0,
+        "H4": 1.0,
+        "H5": 1.0,
+        "H6": 1.0,
+        "G1": 1.0,
+        "G2": 1.0,
+        "G3": 1.0,
+        "G4": 1.0,
+        "G5": 1.0,
+        "I1": 1.0,
+        "I2": 1.0,
+        "I3": 1.0,
+        "I4": 1.0,
+        "A1": 0.0,
+        "A2": 0.0,
+        "A3": 0.0,
+        "A4": 0.0,
+        "D1": 1.0,
+        "D2": 1.0,
+        "D3": 1.0,
+        "V1": 1.0,
+        "V2": 1.0,
+        "V3": 1.0
+      },
+      "expected_total": 85.0,
+      "expected_band": "Critical",
+      "expected_dimensions": {
+        "ai_exposure": 0.0,
+        "data_handling": 100.0,
+        "security_hygiene": 100.0,
+        "governance": 100.0,
+        "vendor_dependence": 100.0,
+        "incident_readiness": 100.0
+      }
+    },
+    {
+      "id": "solo-micro-policy-only",
+      "size_band": "0-9",
+      "pattern": "policy",
+      "responses": {
+        "H1": 0.0,
+        "H2": 1.0,
+        "H3": 1.0,
+        "H4": 1.0,
+        "H5": 1.0,
+        "H6": 1.0,
+        "G1": 1.0,
+        "G2": 1.0,
+        "G3": 1.0,
+        "G4": 1.0,
+        "G5": 1.0,
+        "I1": 1.0,
+        "I2": 1.0,
+        "I3": 1.0,
+        "I4": 1.0,
+        "A1": 0.0,
+        "A2": 0.0,
+        "A3": 0.0,
+        "A4": 0.0,
+        "D1": 1.0,
+        "D2": 1.0,
+        "D3": 1.0,
+        "V1": 1.0,
+        "V2": 1.0,
+        "V3": 1.0
+      },
+      "expected_total": 80.83333333333334,
+      "expected_band": "High",
+      "expected_dimensions": {
+        "ai_exposure": 0.0,
+        "data_handling": 100.0,
+        "security_hygiene": 83.33333333333334,
+        "governance": 100.0,
+        "vendor_dependence": 100.0,
+        "incident_readiness": 100.0
+      }
+    },
+    {
+      "id": "small-trained",
+      "size_band": "10-49",
+      "pattern": "policy+training",
+      "responses": {
+        "H1": 0.0,
+        "H2": 0.0,
+        "H3": 1.0,
+        "H4": 1.0,
+        "H5": 1.0,
+        "H6": 1.0,
+        "G1": 1.0,
+        "G2": 1.0,
+        "G3": 1.0,
+        "G4": 1.0,
+        "G5": 1.0,
+        "I1": 1.0,
+        "I2": 1.0,
+        "I3": 1.0,
+        "I4": 1.0,
+        "A1": 0.0,
+        "A2": 0.0,
+        "A3": 0.0,
+        "A4": 0.0,
+        "D1": 1.0,
+        "D2": 1.0,
+        "D3": 1.0,
+        "V1": 1.0,
+        "V2": 1.0,
+        "V3": 1.0
+      },
+      "expected_total": 76.66666666666666,
+      "expected_band": "High",
+      "expected_dimensions": {
+        "ai_exposure": 0.0,
+        "data_handling": 100.0,
+        "security_hygiene": 66.66666666666666,
+        "governance": 100.0,
+        "vendor_dependence": 100.0,
+        "incident_readiness": 100.0
+      }
+    },
+    {
+      "id": "small-insured",
+      "size_band": "10-49",
+      "pattern": "policy+training+insurance",
+      "responses": {
+        "H1": 0.0,
+        "H2": 0.0,
+        "H3": 0.0,
+        "H4": 1.0,
+        "H5": 1.0,
+        "H6": 1.0,
+        "G1": 1.0,
+        "G2": 1.0,
+        "G3": 1.0,
+        "G4": 1.0,
+        "G5": 1.0,
+        "I1": 1.0,
+        "I2": 1.0,
+        "I3": 1.0,
+        "I4": 1.0,
+        "A1": 0.0,
+        "A2": 0.0,
+        "A3": 0.0,
+        "A4": 0.0,
+        "D1": 1.0,
+        "D2": 1.0,
+        "D3": 1.0,
+        "V1": 1.0,
+        "V2": 1.0,
+        "V3": 1.0
+      },
+      "expected_total": 72.5,
+      "expected_band": "High",
+      "expected_dimensions": {
+        "ai_exposure": 0.0,
+        "data_handling": 100.0,
+        "security_hygiene": 50.0,
+        "governance": 100.0,
+        "vendor_dependence": 100.0,
+        "incident_readiness": 100.0
+      }
+    },
+    {
+      "id": "medium-mature",
+      "size_band": "50-249",
+      "pattern": "full-hygiene",
+      "responses": {
+        "H1": 0.0,
+        "H2": 0.0,
+        "H3": 0.0,
+        "H4": 0.0,
+        "H5": 0.0,
+        "H6": 0.0,
+        "G1": 0.0,
+        "G2": 0.0,
+        "G3": 0.0,
+        "G4": 1.0,
+        "G5": 1.0,
+        "I1": 0.0,
+        "I2": 0.0,
+        "I3": 0.0,
+        "I4": 1.0,
+        "A1": 0.0,
+        "A2": 0.0,
+        "A3": 0.0,
+        "A4": 0.0,
+        "D1": 1.0,
+        "D2": 1.0,
+        "D3": 1.0,
+        "V1": 1.0,
+        "V2": 1.0,
+        "V3": 1.0
+      },
+      "expected_total": 32.25,
+      "expected_band": "Low",
+      "expected_dimensions": {
+        "ai_exposure": 0.0,
+        "data_handling": 100.0,
+        "security_hygiene": 0.0,
+        "governance": 40.0,
+        "vendor_dependence": 100.0,
+        "incident_readiness": 25.0
+      }
+    }
+  ],
+  "known_and_accepted": [
+    "G3 (incident responsibilities written down) and I1 (written incident-response plan) both anchor to CSLS incidman. They are distinct constructs (accountability vs. runbook) and are retained as separate items; the shared anchor is a source-coverage limit, not a scoring duplication.",
+    "Reliability of the full 25-item battery remains open pending fielding - only the CSBS-mapped core (policy, training, insurance) admits a criterion test, as the coverage audit reports."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "matched_pair": {
+    "n_strata": 24,
+    "strata_gov_hi_mean": 0.48488868071378577,
+    "strata_gov_lo_mean": 0.3740765549090184,
+    "note": "Suggestive only (secondary, proxy governance index; unadjusted within size x sector strata)."
+  },
+  "trend": [
+    {
+      "source": "2023",
+      "year": 2023,
+      "training": 0.34460505937016006,
+      "insurance": 0.25289672544080605
+    },
+    {
+      "source": "2024",
+      "year": 2024,
+      "policy": 0.9701492537313433,
+      "training": 0.30313765182186236,
+      "insurance": 0.2385
+    },
+    {
+      "source": "2025",
+      "year": 2025,
+      "policy": 0.980701754385965,
+      "training": 0.34750116767865485,
+      "insurance": 0.25412844036697246
+    }
+  ]
+}

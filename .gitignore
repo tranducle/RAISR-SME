@@ -1,0 +1,32 @@
+# Survey microdata is licensed and must never be committed. See data/README.md.
+data/*
+!data/README.md
+!data/CHECKSUMS.sha256
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Node
+node_modules/
+
+# Environment and credentials -- nothing of the sort belongs in this repository
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

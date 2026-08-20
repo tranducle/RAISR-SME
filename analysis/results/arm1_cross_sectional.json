@@ -1,0 +1,130 @@
+{
+  "preregistered_run": true,
+  "extends": "csbs_common.py",
+  "waves": {
+    "2025": {
+      "n_business": 2180,
+      "n_asked": 2180,
+      "n_complete_case": 2165,
+      "outcome_rate": 0.2822170900692841,
+      "missingness": {
+        "size_sector_dropped": 15,
+        "not_asked": 0
+      },
+      "power_detectable_or_per_sd_80pct": 1.1431397105526704,
+      "n_required_for_or13": 562.887868382129,
+      "weighted_full_controls": {
+        "label": "weighted+controls 2025",
+        "n": 2165,
+        "or_per_sd": 0.7412845004624906,
+        "ci95": [
+          0.6561978235774633,
+          0.8374040432352274
+        ],
+        "p": 1.4895473668244364e-06,
+        "auc": 0.3831424948446225
+      },
+      "unweighted_full_controls": {
+        "label": "unweighted+controls 2025",
+        "n": 2165,
+        "or_per_sd": 0.67572407263349,
+        "ci95": [
+          0.6065912848908737,
+          0.7527358762144652
+        ],
+        "p": 1.0936243658099606e-12,
+        "auc": 0.3831424948446225
+      },
+      "detection_diagnostic": {
+        "breach_rate_with_policy": {
+          "false": 0.1833810888252149,
+          "true": 0.3747763864042934
+        },
+        "n_by_policy": {
+          "false": 1047,
+          "true": 1118
+        },
+        "note": "unweighted, complete-case; policy_comb == 'Yes' vs otherwise"
+      }
+    },
+    "2024": {
+      "n_business": 2000,
+      "n_asked": 2000,
+      "n_complete_case": 1992,
+      "outcome_rate": 0.28815261044176704,
+      "missingness": {
+        "size_sector_dropped": 8,
+        "not_asked": 0
+      },
+      "power_detectable_or_per_sd_80pct": 1.1486613209500751,
+      "n_required_for_or13": 555.8899941051673,
+      "weighted_full_controls": {
+        "label": "weighted+controls 2024",
+        "n": 1992,
+        "or_per_sd": 0.8090535075319676,
+        "ci95": [
+          0.7169449748934936,
+          0.912995558894906
+        ],
+        "p": 0.0005902015871546168,
+        "auc": 0.3834853525847368
+      },
+      "unweighted_full_controls": {
+        "label": "unweighted+controls 2024",
+        "n": 1992,
+        "or_per_sd": 0.7068666358657417,
+        "ci95": [
+          0.6318245532782271,
+          0.7908214999047736
+        ],
+        "p": 1.3737435440336785e-09,
+        "auc": 0.3834853525847368
+      },
+      "detection_diagnostic": {
+        "breach_rate_with_policy": {
+          "false": 0.21072088724584104,
+          "true": 0.3802197802197802
+        },
+        "n_by_policy": {
+          "false": 1082,
+          "true": 910
+        },
+        "note": "unweighted, complete-case; policy_comb == 'Yes' vs otherwise"
+      }
+    },
+    "2023": {
+      "n_business": 3970,
+      "n_asked": 3970,
+      "n_complete_case": 3970,
+      "outcome_rate": 0.16801007556675063,
+      "missingness": {
+        "size_sector_dropped": 0,
+        "not_asked": 0
+      },
+      "power_detectable_or_per_sd_80pct": 1.1262881352241343,
+      "n_required_for_or13": 815.7271512045692,
+      "weighted_full_controls": {
+        "label": "weighted+controls 2023",
+        "n": 3970,
+        "or_per_sd": 0.879319714129081,
+        "ci95": [
+          0.7864689624446796,
+          0.9831324522363922
+        ],
+        "p": 0.023897101047455193,
+        "auc": 0.3710227084459587
+      },
+      "unweighted_full_controls": {
+        "label": "unweighted+controls 2023",
+        "n": 3970,
+        "or_per_sd": 0.8217071388134265,
+        "ci95": [
+          0.741042362110927,
+          0.9111525285188437
+        ],
+        "p": 0.00019533557529140936,
+        "auc": 0.3710227084459587
+      }
+    }
+  }
+}

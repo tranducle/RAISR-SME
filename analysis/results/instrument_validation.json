@@ -1,0 +1,1022 @@
+{
+  "bank": "RAISR-SME Instrument Bank",
+  "bank_version": "v1",
+  "bank_status": "FROZEN 2026-08-18",
+  "eurostat_extra": {
+    "E_AI_TGE2": {
+      "GE10": 12.95,
+      "10-49": 10.57,
+      "50-249": 20.81,
+      "GE250": 43.97
+    },
+    "E_AI_PDI": {
+      "GE10": null,
+      "10-49": null,
+      "50-249": null,
+      "GE250": null
+    }
+  },
+  "coverage_audit": {
+    "per_dataset": {
+      "CSBS_2025": {
+        "H1": [
+          "policy_comb",
+          "review_comb1",
+          "review_comb2"
+        ],
+        "H2": [
+          "govtact_comb3",
+          "trained",
+          "prevent_comb3",
+          "Step2"
+        ],
+        "H3": [
+          "insurex_comb",
+          "whynoinsure1",
+          "whynoinsure2",
+          "whynoinsure3",
+          "whynoinsure4",
+          "whynoinsure5",
+          "whynoinsure6"
+        ],
+        "H4": [],
+        "H5": [
+          "reportb17"
+        ],
+        "H6": [
+          "reportb2",
+          "Step8"
+        ],
+        "G1": [],
+        "G2": [
+          "review_comb1",
+          "review_comb2",
+          "stratint",
+          "supplyrisk1",
+          "supplyrisk2",
+          "supplyrisk_any"
+        ],
+        "G3": [
+          "fraud1_comb1",
+          "fraud1_comb2",
+          "fraud2_comb1",
+          "fraud2_comb2",
+          "fraud3_comb1",
+          "fraud3_comb2",
+          "fraud4_comb1",
+          "fraud4_comb2",
+          "hackcount_bands",
+          "hackcount_comb",
+          "hacksiv_bands",
+          "hacksiv_comb",
+          "hackextcount_bands",
+          "hackextcount_comb",
+          "hackcost_bands",
+          "Step9"
+        ],
+        "G4": [
+          "supplycert1",
+          "supplycert2",
+          "supplycert3",
+          "supplycert_any",
+          "reportb11",
+          "reportb15",
+          "ext_report"
+        ],
+        "G5": [
+          "corporate",
+          "corprisk",
+          "reporta",
+          "noreport1",
+          "noreport2",
+          "noreport3",
+          "noreport4",
+          "noreport5",
+          "noreport6",
+          "noreport7",
+          "noreport8",
+          "noreport9",
+          "noreport10",
+          "noreport11",
+          "noreport12",
+          "noreport13",
+          "reportb1",
+          "reportb2",
+          "reportb3",
+          "reportb5",
+          "reportb6",
+          "reportb7",
+          "reportb8",
+          "reportb9",
+          "reportb10",
+          "reportb11",
+          "reportb12",
+          "reportb13",
+          "reportb14",
+          "reportb15",
+          "reportb16",
+          "reportb17",
+          "reportb18",
+          "reportb21",
+          "reportb22",
+          "reportb24",
+          "reportb30",
+          "reportb45",
+          "reportb48",
+          "reportb51",
+          "ext_report"
+        ],
+        "I1": [
+          "scheme10",
+          "incidactiona",
+          "incidactionb",
+          "incidactionc",
+          "incidactiond",
+          "incidactione",
+          "incidactionf",
+          "incidactiong",
+          "incidactionh",
+          "fraud1_comb1",
+          "fraud1_comb2",
+          "fraud2_comb1",
+          "fraud2_comb2",
+          "fraud3_comb1",
+          "fraud3_comb2",
+          "fraud4_comb1",
+          "fraud4_comb2",
+          "hackcount_bands",
+          "hackcount_comb",
+          "hacksiv_bands",
+          "hacksiv_comb",
+          "hackextcount_bands",
+          "hackextcount_comb",
+          "hackcost_bands",
+          "Step9"
+        ],
+        "I2": [],
+        "I3": [
+          "corprisk"
+        ],
+        "D1": [
+          "rules_comb1",
+          "Step7"
+        ],
+        "D2": [],
+        "D3": [],
+        "V1": [],
+        "V2": []
+      },
+      "CSBS_2024": {
+        "H1": [
+          "policy_comb",
+          "review_comb1",
+          "review_comb2"
+        ],
+        "H2": [
+          "govtact_comb3",
+          "trained",
+          "prevent_comb3",
+          "Step2"
+        ],
+        "H3": [
+          "insurex_comb"
+        ],
+        "H4": [],
+        "H5": [
+          "reportb17"
+        ],
+        "H6": [
+          "reportb2",
+          "Step8"
+        ],
+        "G1": [],
+        "G2": [
+          "review_comb1",
+          "review_comb2",
+          "stratint",
+          "supplyrisk1",
+          "supplyrisk2",
+          "supplyrisk_any"
+        ],
+        "G3": [
+          "fraud1_comb1",
+          "fraud1_comb2",
+          "fraud2_comb1",
+          "fraud2_comb2",
+          "fraud3_comb1",
+          "fraud3_comb2",
+          "fraud4_comb1",
+          "fraud4_comb2",
+          "hackcount_bands",
+          "hackcount_comb",
+          "hacksiv_bands",
+          "hacksiv_comb",
+          "hackextcount_bands",
+          "hackextcount_comb",
+          "hackcost_bands",
+          "Step9"
+        ],
+        "G4": [
+          "supplycert1",
+          "supplycert2",
+          "supplycert3",
+          "supplycert_any",
+          "reportb11",
+          "reportb15",
+          "ext_report"
+        ],
+        "G5": [
+          "corporate",
+          "corprisk",
+          "reporta",
+          "noreport1",
+          "noreport2",
+          "noreport3",
+          "noreport4",
+          "noreport5",
+          "noreport6",
+          "noreport7",
+          "noreport8",
+          "noreport9",
+          "noreport11",
+          "noreport12",
+          "noreport13",
+          "reportb1",
+          "reportb2",
+          "reportb3",
+          "reportb5",
+          "reportb6",
+          "reportb7",
+          "reportb8",
+          "reportb9",
+          "reportb10",
+          "reportb11",
+          "reportb12",
+          "reportb13",
+          "reportb14",
+          "reportb15",
+          "reportb16",
+          "reportb17",
+          "reportb18",
+          "reportb21",
+          "reportb22",
+          "reportb24",
+          "reportb30",
+          "reportb45",
+          "reportb48",
+          "reportb51",
+          "ext_report"
+        ],
+        "I1": [
+          "scheme10",
+          "incidactiona",
+          "incidactionb",
+          "incidactionc",
+          "incidactiond",
+          "incidactione",
+          "incidactionf",
+          "incidactiong",
+          "incidactionh",
+          "fraud1_comb1",
+          "fraud1_comb2",
+          "fraud2_comb1",
+          "fraud2_comb2",
+          "fraud3_comb1",
+          "fraud3_comb2",
+          "fraud4_comb1",
+          "fraud4_comb2",
+          "hackcount_bands",
+          "hackcount_comb",
+          "hacksiv_bands",
+          "hacksiv_comb",
+          "hackextcount_bands",
+          "hackextcount_comb",
+          "hackcost_bands",
+          "Step9"
+        ],
+        "I2": [],
+        "I3": [
+          "corprisk"
+        ],
+        "D1": [
+          "rules_comb1",
+          "Step7"
+        ],
+        "D2": [],
+        "D3": [],
+        "V1": [],
+        "V2": []
+      },
+      "CSBS_2023": {
+        "H1": [],
+        "H2": [
+          "trained",
+          "Step2"
+        ],
+        "H3": [
+          "reportb32"
+        ],
+        "H4": [],
+        "H5": [
+          "reportb17"
+        ],
+        "H6": [
+          "Step8"
+        ],
+        "G1": [],
+        "G2": [
+          "stratint",
+          "supplyrisk1",
+          "supplyrisk2"
+        ],
+        "G3": [
+          "ransdema",
+          "ranscosta",
+          "viruscosta",
+          "hackcosta",
+          "tkvrcosta",
+          "fraudcont_1",
+          "fraudcont_2",
+          "fraudcont_3",
+          "fraudcont_4",
+          "fraudcont_5",
+          "fraudcont_6",
+          "fraudcont_7",
+          "fraudcont_8",
+          "fraudcont_9",
+          "fraudcosta",
+          "Step9"
+        ],
+        "G4": [
+          "reportb11",
+          "reportb15",
+          "reportb35"
+        ],
+        "G5": [
+          "samptype",
+          "questtype",
+          "corporate",
+          "corprisk",
+          "reporta",
+          "noreport1",
+          "noreport2",
+          "noreport3",
+          "noreport4",
+          "noreport5",
+          "noreport6",
+          "noreport7",
+          "noreport8",
+          "noreport9",
+          "noreport10",
+          "noreport11",
+          "noreport12",
+          "noreport13",
+          "reportb1",
+          "reportb3",
+          "reportb5",
+          "reportb6",
+          "reportb7",
+          "reportb8",
+          "reportb9",
+          "reportb10",
+          "reportb11",
+          "reportb12",
+          "reportb14",
+          "reportb15",
+          "reportb16",
+          "reportb17",
+          "reportb18",
+          "reportb20",
+          "reportb21",
+          "reportb22",
+          "reportb23",
+          "reportb24",
+          "reportb26",
+          "reportb28",
+          "reportb30",
+          "reportb32",
+          "reportb35",
+          "reportb36",
+          "reportb40",
+          "reportb43",
+          "reportb45"
+        ],
+        "I1": [
+          "incidactiona",
+          "incidactionb",
+          "incidactionc",
+          "incidactiond",
+          "incidactione",
+          "incidactionf",
+          "incidactiong",
+          "ransdema",
+          "ranscosta",
+          "viruscosta",
+          "hackcosta",
+          "tkvrcosta",
+          "fraudcont_1",
+          "fraudcont_2",
+          "fraudcont_3",
+          "fraudcont_4",
+          "fraudcont_5",
+          "fraudcont_6",
+          "fraudcont_7",
+          "fraudcont_8",
+          "fraudcont_9",
+          "fraudcosta",
+          "Step9"
+        ],
+        "I2": [],
+        "I3": [
+          "corprisk"
+        ],
+        "D1": [
+          "income",
+          "Step7"
+        ],
+        "D2": [],
+        "D3": [],
+        "V1": [],
+        "V2": [
+          "disrupta11",
+          "ranscont_6",
+          "viruscont_6"
+        ]
+      },
+      "CSLS_9356": {
+        "H1": [],
+        "H2": [
+          "boardtrainfreq"
+        ],
+        "H3": [
+          "insurex",
+          "insurex1",
+          "reanoins1",
+          "reanoins2",
+          "reanoins3",
+          "reanoins4",
+          "reanoins5",
+          "reanoins6",
+          "reanoins7"
+        ],
+        "H4": [],
+        "H5": [],
+        "H6": [],
+        "G1": [
+          "bgoverna",
+          "bgovernb"
+        ],
+        "G2": [
+          "gova",
+          "rulesa"
+        ],
+        "G3": [
+          "exercise",
+          "impact1",
+          "impact10",
+          "impact11",
+          "impact12",
+          "impact13",
+          "impact2",
+          "impact3",
+          "impact4",
+          "impact5",
+          "impact6",
+          "impact7",
+          "impact8",
+          "impact9",
+          "impacta",
+          "impactb",
+          "impactc",
+          "impactd",
+          "impacte",
+          "impactf",
+          "impactg",
+          "impacth",
+          "impacti",
+          "impactj",
+          "impactk",
+          "incident12",
+          "incident13",
+          "incidenta",
+          "incidentc",
+          "incidentd",
+          "incidente",
+          "incidentf",
+          "incidentg",
+          "incidenth",
+          "incidenti",
+          "incidentj",
+          "incidentk",
+          "incidman",
+          "inconten4",
+          "incontentb",
+          "incontenth",
+          "incontenti",
+          "outcome1",
+          "outcome10",
+          "outcome11",
+          "outcome12",
+          "outcome13",
+          "outcome2",
+          "outcome3",
+          "outcome4",
+          "outcome5",
+          "outcome6",
+          "outcome7",
+          "outcome8",
+          "outcome9",
+          "outcomea",
+          "outcomeb",
+          "outcomec",
+          "outcomed",
+          "outcomee",
+          "outcomef",
+          "outcomeg",
+          "outcomeh",
+          "outcomei",
+          "outcomej",
+          "outcomek"
+        ],
+        "G4": [
+          "supplyhow6",
+          "supplyhowa",
+          "supplyhowb",
+          "supplyhowc",
+          "supplyhowd",
+          "supplyhowe",
+          "supplyrisk"
+        ],
+        "G5": [],
+        "I1": [
+          "exercise",
+          "impact1",
+          "impact10",
+          "impact11",
+          "impact12",
+          "impact13",
+          "impact2",
+          "impact3",
+          "impact4",
+          "impact5",
+          "impact6",
+          "impact7",
+          "impact8",
+          "impact9",
+          "impacta",
+          "impactb",
+          "impactc",
+          "impactd",
+          "impacte",
+          "impactf",
+          "impactg",
+          "impacth",
+          "impacti",
+          "impactj",
+          "impactk",
+          "incident12",
+          "incident13",
+          "incidenta",
+          "incidentc",
+          "incidentd",
+          "incidente",
+          "incidentf",
+          "incidentg",
+          "incidenth",
+          "incidenti",
+          "incidentj",
+          "incidentk",
+          "incidman",
+          "inconten4",
+          "incontentb",
+          "incontenth",
+          "incontenti",
+          "outcome1",
+          "outcome10",
+          "outcome11",
+          "outcome12",
+          "outcome13",
+          "outcome2",
+          "outcome3",
+          "outcome4",
+          "outcome5",
+          "outcome6",
+          "outcome7",
+          "outcome8",
+          "outcome9",
+          "outcomea",
+          "outcomeb",
+          "outcomec",
+          "outcomed",
+          "outcomee",
+          "outcomef",
+          "outcomeg",
+          "outcomeh",
+          "outcomei",
+          "outcomej",
+          "outcomek"
+        ],
+        "I2": [
+          "q_panelrecon",
+          "panreconsum1",
+          "panreconsum2",
+          "panreconsum3",
+          "panreconsum4"
+        ],
+        "I3": [
+          "exercise"
+        ],
+        "D1": [
+          "outcomef",
+          "outcome6"
+        ],
+        "D2": [],
+        "D3": [
+          "onlinea"
+        ],
+        "V1": [
+          "onlinea"
+        ],
+        "V2": [
+          "incidentj",
+          "outcomee",
+          "outcome5"
+        ]
+      }
+    },
+    "core_item_coverage": {
+      "H1": {
+        "CSBS_2025": [
+          "policy_comb",
+          "review_comb1",
+          "review_comb2"
+        ],
+        "CSBS_2024": [
+          "policy_comb",
+          "review_comb1",
+          "review_comb2"
+        ]
+      },
+      "H2": {
+        "CSBS_2025": [
+          "govtact_comb3",
+          "trained",
+          "prevent_comb3",
+          "Step2"
+        ],
+        "CSBS_2024": [
+          "govtact_comb3",
+          "trained",
+          "prevent_comb3",
+          "Step2"
+        ],
+        "CSBS_2023": [
+          "trained",
+          "Step2"
+        ],
+        "CSLS_9356": [
+          "boardtrainfreq"
+        ]
+      },
+      "H3": {
+        "CSBS_2025": [
+          "insurex_comb",
+          "whynoinsure1",
+          "whynoinsure2",
+          "whynoinsure3",
+          "whynoinsure4",
+          "whynoinsure5",
+          "whynoinsure6"
+        ],
+        "CSBS_2024": [
+          "insurex_comb"
+        ],
+        "CSBS_2023": [
+          "reportb32"
+        ],
+        "CSLS_9356": [
+          "insurex",
+          "insurex1",
+          "reanoins1",
+          "reanoins2",
+          "reanoins3",
+          "reanoins4",
+          "reanoins5",
+          "reanoins6",
+          "reanoins7"
+        ]
+      },
+      "H4": {},
+      "H5": {
+        "CSBS_2025": [
+          "reportb17"
+        ],
+        "CSBS_2024": [
+          "reportb17"
+        ],
+        "CSBS_2023": [
+          "reportb17"
+        ]
+      },
+      "H6": {
+        "CSBS_2025": [
+          "reportb2",
+          "Step8"
+        ],
+        "CSBS_2024": [
+          "reportb2",
+          "Step8"
+        ],
+        "CSBS_2023": [
+          "Step8"
+        ]
+      },
+      "I1": {
+        "CSBS_2025": [
+          "scheme10",
+          "incidactiona",
+          "incidactionb",
+          "incidactionc",
+          "incidactiond",
+          "incidactione",
+          "incidactionf",
+          "incidactiong",
+          "incidactionh",
+          "fraud1_comb1",
+          "fraud1_comb2",
+          "fraud2_comb1",
+          "fraud2_comb2",
+          "fraud3_comb1",
+          "fraud3_comb2",
+          "fraud4_comb1",
+          "fraud4_comb2",
+          "hackcount_bands",
+          "hackcount_comb",
+          "hacksiv_bands",
+          "hacksiv_comb",
+          "hackextcount_bands",
+          "hackextcount_comb",
+          "hackcost_bands",
+          "Step9"
+        ],
+        "CSBS_2024": [
+          "scheme10",
+          "incidactiona",
+          "incidactionb",
+          "incidactionc",
+          "incidactiond",
+          "incidactione",
+          "incidactionf",
+          "incidactiong",
+          "incidactionh",
+          "fraud1_comb1",
+          "fraud1_comb2",
+          "fraud2_comb1",
+          "fraud2_comb2",
+          "fraud3_comb1",
+          "fraud3_comb2",
+          "fraud4_comb1",
+          "fraud4_comb2",
+          "hackcount_bands",
+          "hackcount_comb",
+          "hacksiv_bands",
+          "hacksiv_comb",
+          "hackextcount_bands",
+          "hackextcount_comb",
+          "hackcost_bands",
+          "Step9"
+        ],
+        "CSBS_2023": [
+          "incidactiona",
+          "incidactionb",
+          "incidactionc",
+          "incidactiond",
+          "incidactione",
+          "incidactionf",
+          "incidactiong",
+          "ransdema",
+          "ranscosta",
+          "viruscosta",
+          "hackcosta",
+          "tkvrcosta",
+          "fraudcont_1",
+          "fraudcont_2",
+          "fraudcont_3",
+          "fraudcont_4",
+          "fraudcont_5",
+          "fraudcont_6",
+          "fraudcont_7",
+          "fraudcont_8",
+          "fraudcont_9",
+          "fraudcosta",
+          "Step9"
+        ],
+        "CSLS_9356": [
+          "exercise",
+          "impact1",
+          "impact10",
+          "impact11",
+          "impact12",
+          "impact13",
+          "impact2",
+          "impact3",
+          "impact4",
+          "impact5",
+          "impact6",
+          "impact7",
+          "impact8",
+          "impact9",
+          "impacta",
+          "impactb",
+          "impactc",
+          "impactd",
+          "impacte",
+          "impactf",
+          "impactg",
+          "impacth",
+          "impacti",
+          "impactj",
+          "impactk",
+          "incident12",
+          "incident13",
+          "incidenta",
+          "incidentc",
+          "incidentd",
+          "incidente",
+          "incidentf",
+          "incidentg",
+          "incidenth",
+          "incidenti",
+          "incidentj",
+          "incidentk",
+          "incidman",
+          "inconten4",
+          "incontentb",
+          "incontenth",
+          "incontenti",
+          "outcome1",
+          "outcome10",
+          "outcome11",
+          "outcome12",
+          "outcome13",
+          "outcome2",
+          "outcome3",
+          "outcome4",
+          "outcome5",
+          "outcome6",
+          "outcome7",
+          "outcome8",
+          "outcome9",
+          "outcomea",
+          "outcomeb",
+          "outcomec",
+          "outcomed",
+          "outcomee",
+          "outcomef",
+          "outcomeg",
+          "outcomeh",
+          "outcomei",
+          "outcomej",
+          "outcomek"
+        ]
+      },
+      "I2": {
+        "CSLS_9356": [
+          "q_panelrecon",
+          "panreconsum1",
+          "panreconsum2",
+          "panreconsum3",
+          "panreconsum4"
+        ]
+      },
+      "I3": {
+        "CSBS_2025": [
+          "corprisk"
+        ],
+        "CSBS_2024": [
+          "corprisk"
+        ],
+        "CSBS_2023": [
+          "corprisk"
+        ],
+        "CSLS_9356": [
+          "exercise"
+        ]
+      },
+      "I4": {}
+    }
+  },
+  "reliability_csbs": {
+    "2025": {
+      "n_items": 6,
+      "n_cases": 24,
+      "kr20": 0.25219780219780225,
+      "item_total": {
+        "H1": NaN,
+        "H2": 0.3791499368913661,
+        "H5": -0.12834897516723517,
+        "H6": NaN,
+        "I1": 0.27914526311954124,
+        "I3": -0.07412493166611
+      }
+    },
+    "2024": {
+      "n_items": 6,
+      "n_cases": 25,
+      "kr20": -0.04061538461538489,
+      "item_total": {
+        "H1": NaN,
+        "H2": -0.1259881576697424,
+        "H5": NaN,
+        "H6": NaN,
+        "I1": -0.13544168923390928,
+        "I3": 0.20851441405707477
+      }
+    },
+    "2023": {
+      "n_items": 4,
+      "n_cases": 367,
+      "kr20": 0.5266731547908373,
+      "item_total": {
+        "H2": 0.4527914576865884,
+        "H6": 0.329738510465739,
+        "I1": 0.24207179934603532,
+        "I3": 0.2622914235184379
+      }
+    }
+  },
+  "mechanics": {
+    "archetypes": [
+      {
+        "name": "solo-micro-no-governance",
+        "size": "0-9",
+        "total": 85.0,
+        "band": "Critical"
+      },
+      {
+        "name": "solo-micro-policy-only",
+        "size": "0-9",
+        "total": 80.8,
+        "band": "High"
+      },
+      {
+        "name": "small-trained",
+        "size": "10-49",
+        "total": 76.7,
+        "band": "High"
+      },
+      {
+        "name": "small-insured",
+        "size": "10-49",
+        "total": 72.5,
+        "band": "High"
+      },
+      {
+        "name": "medium-mature",
+        "size": "50-249",
+        "total": 32.2,
+        "band": "Low"
+      }
+    ],
+    "monotonicity_pass": true,
+    "band_boundaries": {
+      "40": {
+        "total": 40.0,
+        "band": "Medium"
+      },
+      "65": {
+        "total": 65.0,
+        "band": "High"
+      },
+      "85": {
+        "total": 85.0,
+        "band": "Critical"
+      }
+    },
+    "action_coverage_pass": true,
+    "weight_sensitivity_band_shifts": {
+      "security_hygiene_-20%": 1,
+      "security_hygiene_+20%": 0,
+      "incident_readiness_-20%": 1,
+      "incident_readiness_+20%": 0,
+      "ai_exposure_-20%": 0,
+      "ai_exposure_+20%": 1,
+      "data_handling_-20%": 1,
+      "data_handling_+20%": 0,
+      "governance_-20%": 1,
+      "governance_+20%": 0,
+      "vendor_dependence_-20%": 1,
+      "vendor_dependence_+20%": 0
+    }
+  },
+  "baseline_arm": {
+    "vs_C1": {
+      "c1": "AI maturity framework of internalized and ecosystem-embedded capabilities (arXiv:2603.08728); conceptual framework, no scored instrument",
+      "raisr_sme": "25-item scored instrument, six dimensions, four bands, prioritized actions, public-data traceability per item",
+      "coverage_overlap": "AI adoption / capability maturity concepts overlap on the AI-exposure and governance dimensions",
+      "burden": "C1: framework (reading-level); RAISR-SME: ~20-minute single-respondent completion"
+    },
+    "trustx_position": "TrustX ARC risk-tiers internally created agentic AI systems for enterprise AI-governance practitioners; different population (enterprises), object (agentic systems), and output (risk-tier classification) than RAISR-SME.",
+    "same_firm_correlation": "Not computable as specified: the full 25-item bank is not fielded in any public dataset; the criterion-core subset (3-6 mapped items in CSBS) is the only overlap. Reported instead: KR-20 on mapped core items (see reliability)."
+  }
+}
