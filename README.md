@@ -3,10 +3,9 @@
 Open 25-item ternary (`Yes` / `No` / `Don't know`) cyber-AI self-assessment checklist, three bit-exact client-side/offline scoring engines, and deterministic synthetic and UK survey audit suite accompanying our **ICIIT 2027** (ACM ICPS) manuscript:
 
 > **RAISR-SME: Auditable Cyber-AI Triage and the Limits of Breach-Based Validation**
-> Tran Duc Le, Thang Le Dinh, Manh Chien Vu, and Thi Chau Giang Tran
+> Anonymous Authors (author names and affiliations withheld during peer review)
 
 - **Interactive Zero-Telemetry Browser App**: https://raisr-sme.vercel.app
-- **Source & Replication Repository**: https://github.com/tranducle/RAISR-SME
 - **Code License**: MIT (`LICENSE`) | **Item Bank License**: CC BY 4.0 (`instrument/bank_v1.json`)
 
 ## Repository Structure

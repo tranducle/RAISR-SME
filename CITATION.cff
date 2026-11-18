@@ -2,43 +2,26 @@ cff-version: 1.2.0
 title: >-
   RAISR-SME: Auditable Cyber-AI Triage and the Limits of Breach-Based Validation
 message: >-
-  If you use the RAISR-SME instrument, item bank, or empirical and simulation
-  replication suite, please cite this software package and the accompanying
-  ICIIT 2027 manuscript.
+  Anonymous artifact release accompanying the manuscript under peer review.
+  Author names, affiliations, and citation details are withheld during review.
 type: software
 authors:
-  - family-names: Le
-    given-names: Tran Duc
-    email: let@uwstout.edu
-    affiliation: University of Wisconsin-Stout Polytechnic, USA
-  - family-names: Le Dinh
-    given-names: Thang
-    email: Thang.Ledinh@uqtr.ca
-    affiliation: Universite du Quebec a Trois-Rivieres, Canada
-  - family-names: Vu
-    given-names: Manh Chien
-    email: manh-chien.vu@uqo.ca
-    affiliation: Universite du Quebec en Outaouais, Canada
-  - family-names: Tran
-    given-names: Thi Chau Giang
-    email: Thi.Chau.Giang.Tran@uqtr.ca
-    affiliation: Universite du Quebec a Trois-Rivieres, Canada
-repository-code: "https://github.com/tranducle/RAISR-SME"
+  - name: Anonymous Authors
+    affiliation: Withheld for peer review
 url: "https://raisr-sme.vercel.app"
 abstract: >-
   Reference implementation of the RAISR-SME v1.0 25-item ternary cyber-AI
-  self-assessment checklist and deterministic empirical/simulation audit suite
-  for ICIIT 2027. Includes the frozen item bank (bank_v1.json), authoritative
-  NIST CSF 2.0 subcategory crosswalk and verifier (verify_ids.py), three
-  bit-exact scoring engines (Python stdlib, browser JavaScript, and NumPy),
-  automated parity tests across 20,006 vectors, retrospective completion-bound
-  and boundary-sensitivity audits (retrospective_robustness.py), and four
-  analysis suites (exp1 to exp4) auditing UK Cyber Security Breaches Survey
-  (2023 to 2025) skip-routing and size strata, UK Cyber Security Longitudinal
-  Survey (Waves 1 to 4) matched-panel timing and Mundlak models, and 50,000
-  synthetic SME profiles. Licensed UK Data Archive microdata is withheld per
-  End User Licence and documented with SHA-256 checksums in DATA.md and
-  data/README.md.
+  self-assessment checklist and deterministic empirical/simulation audit suite.
+  Includes the frozen item bank (bank_v1.json), authoritative NIST CSF 2.0
+  subcategory crosswalk and verifier (verify_ids.py), three bit-exact scoring
+  engines (Python stdlib, browser JavaScript, and NumPy), automated parity
+  tests across 20,006 vectors, retrospective completion-bound and
+  boundary-sensitivity audits (retrospective_robustness.py), and four analysis
+  suites (exp1 to exp4) auditing UK Cyber Security Breaches Survey (2023 to
+  2025) skip-routing and size strata, UK Cyber Security Longitudinal Survey
+  (Waves 1 to 4) matched-panel timing and Mundlak models, and 50,000 synthetic
+  SME profiles. Licensed UK Data Archive microdata is withheld per End User
+  Licence and documented with SHA-256 checksums in DATA.md and data/README.md.
 keywords:
   - SME cybersecurity
   - responsible AI
@@ -47,5 +30,5 @@ keywords:
   - survey measurement
   - synthetic evaluation
 license: MIT
-version: "2.0.1"
+version: "2.0.2"
 date-released: "2026-11-18"
