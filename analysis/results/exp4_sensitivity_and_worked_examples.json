@@ -1,0 +1,714 @@
+{
+  "phase": "official",
+  "seeds": [
+    202702,
+    202703,
+    202704,
+    202705,
+    202706
+  ],
+  "n_profiles_per_seed": 10000,
+  "strata_marginals": {
+    "micro_1_9": {
+      "n_csbs": 1014,
+      "share": 0.58,
+      "ai_any_eurostat": 0.14450000000000002,
+      "ai_nlg_eurostat": 0.08003999999999999,
+      "item_risk_prob": {
+        "A1": 0.26732500000000003,
+        "A2": 0.22397500000000004,
+        "A3": 0.372096,
+        "A4": 0.23842500000000003,
+        "D1": 0.7416173570019724,
+        "D2": 0.7533940774487472,
+        "D3": 0.7045364891518737,
+        "H1": 0.6834319526627219,
+        "H2": 0.8344965104685942,
+        "H3": 0.4722222222222222,
+        "H4": 0.5339644970414201,
+        "H5": 0.6321499013806706,
+        "H6": 0.4493589743589744,
+        "G1": 0.742603550295858,
+        "G2": 0.5848126232741617,
+        "G3": 0.7100591715976331,
+        "G4": 0.8678500986193294,
+        "G5": 0.6360076575008702,
+        "V1": 0.74,
+        "V2": 0.7416173570019724,
+        "V3": 0.8678500986193294,
+        "I1": 0.7307692307692307,
+        "I2": 0.5294117647058824,
+        "I3": 0.8189066059225513,
+        "I4": 0.6913214990138067
+      },
+      "item_dk_prob": {
+        "A1": 0.36830389616649994,
+        "A2": 0.36830389616649994,
+        "A3": 0.36830389616649994,
+        "A4": 0.36830389616649994,
+        "D1": 0.3137403559936851,
+        "D2": 0.3137403559936851,
+        "D3": 0.3137403559936851,
+        "H1": 0.20461327564805554,
+        "H2": 0.1909723906048518,
+        "H3": 0.27281770086407403,
+        "H4": 0.24553593077766664,
+        "H5": 0.2591768158208703,
+        "H6": 0.23189504573446293,
+        "G1": 0.28645858590727774,
+        "G2": 0.28645858590727774,
+        "G3": 0.28645858590727774,
+        "G4": 0.28645858590727774,
+        "G5": 0.28645858590727774,
+        "V1": 0.3410221260800925,
+        "V2": 0.3410221260800925,
+        "V3": 0.3410221260800925,
+        "I1": 0.2591768158208703,
+        "I2": 0.27281770086407403,
+        "I3": 0.3137403559936851,
+        "I4": 0.3410221260800925
+      }
+    },
+    "small_10_49": {
+      "n_csbs": 565,
+      "share": 0.28,
+      "ai_any_eurostat": 0.17,
+      "ai_nlg_eurostat": 0.0696,
+      "item_risk_prob": {
+        "A1": 0.31450000000000006,
+        "A2": 0.2635,
+        "A3": 0.34704,
+        "A4": 0.2805,
+        "D1": 0.5150442477876106,
+        "D2": 0.7064642082429502,
+        "D3": 0.48929203539823,
+        "H1": 0.3911504424778761,
+        "H2": 0.6322463768115942,
+        "H3": 0.24553571428571427,
+        "H4": 0.3708318584070796,
+        "H5": 0.39469026548672564,
+        "H6": 0.3658407079646018,
+        "G1": 0.552212389380531,
+        "G2": 0.3486725663716814,
+        "G3": 0.4407079646017699,
+        "G4": 0.7610619469026548,
+        "G5": 0.5122685563138817,
+        "V1": 0.66,
+        "V2": 0.5150442477876106,
+        "V3": 0.7610619469026548,
+        "I1": 0.48672566371681414,
+        "I2": 0.47232472324723246,
+        "I3": 0.7678958785249458,
+        "I4": 0.5628318584070796
+      },
+      "item_dk_prob": {
+        "A1": 0.31696465111688654,
+        "A2": 0.31696465111688654,
+        "A3": 0.31696465111688654,
+        "A4": 0.31696465111688654,
+        "D1": 0.2700069250254959,
+        "D2": 0.2700069250254959,
+        "D3": 0.2700069250254959,
+        "H1": 0.17609147284271473,
+        "H2": 0.16435204131986708,
+        "H3": 0.23478863045695297,
+        "H4": 0.21130976741125768,
+        "H5": 0.22304919893410532,
+        "H6": 0.19957033588841003,
+        "G1": 0.24652806197980062,
+        "G2": 0.24652806197980062,
+        "G3": 0.24652806197980062,
+        "G4": 0.24652806197980062,
+        "G5": 0.24652806197980062,
+        "V1": 0.2934857880711912,
+        "V2": 0.2934857880711912,
+        "V3": 0.2934857880711912,
+        "I1": 0.22304919893410532,
+        "I2": 0.23478863045695297,
+        "I3": 0.2700069250254959,
+        "I4": 0.2934857880711912
+      }
+    },
+    "medium_50_249": {
+      "n_csbs": 413,
+      "share": 0.14,
+      "ai_any_eurostat": 0.3036,
+      "ai_nlg_eurostat": 0.1479,
+      "item_risk_prob": {
+        "A1": 0.5616599999999999,
+        "A2": 0.47058,
+        "A3": 0.53496,
+        "A4": 0.5009399999999999,
+        "D1": 0.4092009685230024,
+        "D2": 0.6688343558282209,
+        "D3": 0.3887409200968523,
+        "H1": 0.24939467312348668,
+        "H2": 0.4282178217821782,
+        "H3": 0.1258741258741259,
+        "H4": 0.2946246973365617,
+        "H5": 0.23728813559322035,
+        "H6": 0.29588377723970943,
+        "G1": 0.4721549636803874,
+        "G2": 0.3220338983050847,
+        "G3": 0.29055690072639223,
+        "G4": 0.648910411622276,
+        "G5": 0.43864158440429624,
+        "V1": 0.56,
+        "V2": 0.4092009685230024,
+        "V3": 0.648910411622276,
+        "I1": 0.38256658595641646,
+        "I2": 0.40512820512820513,
+        "I3": 0.7269938650306749,
+        "I4": 0.4552058111380145
+      },
+      "item_dk_prob": {
+        "A1": 0.30862429378531075,
+        "A2": 0.30862429378531075,
+        "A3": 0.30862429378531075,
+        "A4": 0.30862429378531075,
+        "D1": 0.2629021761874869,
+        "D2": 0.2629021761874869,
+        "D3": 0.2629021761874869,
+        "H1": 0.1714579409918393,
+        "H2": 0.16002741159238335,
+        "H3": 0.24338624338624337,
+        "H4": 0.20574952919020717,
+        "H5": 0.2171800585896631,
+        "H6": 0.1943189997907512,
+        "G1": 0.24004111738857503,
+        "G2": 0.24004111738857503,
+        "G3": 0.24004111738857503,
+        "G4": 0.24004111738857503,
+        "G5": 0.24004111738857503,
+        "V1": 0.28576323498639883,
+        "V2": 0.28576323498639883,
+        "V3": 0.28576323498639883,
+        "I1": 0.2171800585896631,
+        "I2": 0.22861058798911907,
+        "I3": 0.2629021761874869,
+        "I4": 0.28576323498639883
+      }
+    }
+  },
+  "primary_seed_202702": {
+    "n_profiles": 10000,
+    "arms": {
+      "unmasked_oracle": {
+        "exact_concordance": 0.9278,
+        "adjacent_or_exact": 1.0,
+        "two_band_jump_rate": 0.0,
+        "false_critical_rate": 0.0,
+        "spearman_vs_oracle": 1.0,
+        "mean_score": 55.830383333327596,
+        "sd_score": 20.81651345336351
+      },
+      "raisr_full": {
+        "exact_concordance": 0.7137,
+        "adjacent_or_exact": 0.9985,
+        "two_band_jump_rate": 0.0015,
+        "false_critical_rate": 0.0002,
+        "spearman_vs_oracle": 0.9569877162964758,
+        "mean_score": 54.180112500003595,
+        "sd_score": 16.028919259681892
+      },
+      "naive_single_polarity_dk0_unweighted": {
+        "exact_concordance": 0.4735,
+        "adjacent_or_exact": 0.9087,
+        "two_band_jump_rate": 0.0913,
+        "false_critical_rate": 0.0,
+        "spearman_vs_oracle": 0.77850878402133,
+        "mean_score": 42.96,
+        "sd_score": 15.756523309495666
+      },
+      "single_polarity_dk0_normative": {
+        "exact_concordance": 0.474,
+        "adjacent_or_exact": 0.91,
+        "two_band_jump_rate": 0.09,
+        "false_critical_rate": 0.0003,
+        "spearman_vs_oracle": 0.7964158228286373,
+        "mean_score": 43.02589166666029,
+        "sd_score": 16.21299730840056
+      },
+      "single_polarity_dk05_normative": {
+        "exact_concordance": 0.6128,
+        "adjacent_or_exact": 0.9928,
+        "two_band_jump_rate": 0.0072,
+        "false_critical_rate": 0.0064,
+        "spearman_vs_oracle": 0.852108352690436,
+        "mean_score": 56.9279458333356,
+        "sd_score": 15.681564144878763
+      },
+      "aligned_polarity_dk0_mscore_adapted": {
+        "exact_concordance": 0.4319,
+        "adjacent_or_exact": 0.9184,
+        "two_band_jump_rate": 0.0816,
+        "false_critical_rate": 0.0,
+        "spearman_vs_oracle": 0.9031502451613987,
+        "mean_score": 40.278058333329994,
+        "sd_score": 16.462399979858787
+      },
+      "aligned_polarity_dk1_pessimistic": {
+        "exact_concordance": 0.5132,
+        "adjacent_or_exact": 0.987,
+        "two_band_jump_rate": 0.013,
+        "false_critical_rate": 0.1059,
+        "spearman_vs_oracle": 0.9345535824409578,
+        "mean_score": 68.0821666666626,
+        "sd_score": 16.924375554824117
+      },
+      "available_case_dimension_mean": {
+        "exact_concordance": 0.7897,
+        "adjacent_or_exact": 0.9999,
+        "two_band_jump_rate": 0.0001,
+        "false_critical_rate": 0.0305,
+        "spearman_vs_oracle": 0.9536904538194569,
+        "mean_score": 55.7794833333491,
+        "sd_score": 21.650946864732585
+      },
+      "empirical_prevalence_dk": {
+        "exact_concordance": 0.7252,
+        "adjacent_or_exact": 0.9996,
+        "two_band_jump_rate": 0.0004,
+        "false_critical_rate": 0.0002,
+        "spearman_vs_oracle": 0.9629860244613754,
+        "mean_score": 55.67333005250059,
+        "sd_score": 15.997388992001312
+      },
+      "equal_domain_1_6": {
+        "exact_concordance": 0.681,
+        "adjacent_or_exact": 0.9968,
+        "two_band_jump_rate": 0.0032,
+        "false_critical_rate": 0.0005,
+        "spearman_vs_oracle": 0.9365836192981977,
+        "mean_score": 54.963874999995696,
+        "sd_score": 15.430233093317188
+      },
+      "item_equal_1_25": {
+        "exact_concordance": 0.6929,
+        "adjacent_or_exact": 0.9982,
+        "two_band_jump_rate": 0.0018,
+        "false_critical_rate": 0.0001,
+        "spearman_vs_oracle": 0.9503121191045586,
+        "mean_score": 54.1472,
+        "sd_score": 15.737340898317447
+      }
+    },
+    "primary_gain_vs_naive_checklist": 0.24020000000000002,
+    "gain_vs_mscore_dk0": 0.2818,
+    "gain_vs_single_polarity_dk05": 0.10089999999999999,
+    "gain_vs_available_case_mean": -0.07599999999999996,
+    "high_ai_subgroup_polarity_gain": 0.14532967032967037,
+    "headroom": {
+      "baseline_naive_checklist": 0.4735,
+      "ceiling_unmasked_oracle": 0.9278,
+      "room": 0.4543,
+      "raisr_full_achieved": 0.7137
+    },
+    "controls": {
+      "positive_shadow_ai_score_shift": 15.0,
+      "negative_within_dim_perm_max_diff": 0.0,
+      "negative_within_dim_perm_band_match": 1.0
+    },
+    "dk_dose_curve": {
+      "0.00": {
+        "exact_concordance": 0.4319,
+        "adjacent_or_exact": 0.9184,
+        "false_critical_rate": 0.0,
+        "mean_score": 40.278058333329994
+      },
+      "0.25": {
+        "exact_concordance": 0.5836,
+        "adjacent_or_exact": 0.9736,
+        "false_critical_rate": 0.0,
+        "mean_score": 47.2290854166626
+      },
+      "0.50": {
+        "exact_concordance": 0.7137,
+        "adjacent_or_exact": 0.9985,
+        "false_critical_rate": 0.0002,
+        "mean_score": 54.180112500003595
+      },
+      "0.75": {
+        "exact_concordance": 0.6949,
+        "adjacent_or_exact": 0.9998,
+        "false_critical_rate": 0.01,
+        "mean_score": 61.13113958333001
+      },
+      "1.00": {
+        "exact_concordance": 0.5132,
+        "adjacent_or_exact": 0.987,
+        "false_critical_rate": 0.1059,
+        "mean_score": 68.0821666666626
+      }
+    },
+    "dirichlet_regimes": {
+      "alpha_5": {
+        "exact_retention_mean": 0.7376256666666666,
+        "exact_retention_p05": 0.58755,
+        "adjacent_or_exact_mean": 0.9978996666666667,
+        "two_band_jump_mean": 0.0021003333333333334,
+        "spearman_mean": 0.8979706313710623
+      },
+      "alpha_20": {
+        "exact_retention_mean": 0.851875,
+        "exact_retention_p05": 0.7482000000000001,
+        "adjacent_or_exact_mean": 0.9999893333333334,
+        "two_band_jump_mean": 1.0666666666666667e-05,
+        "spearman_mean": 0.9645298660724645
+      },
+      "alpha_50": {
+        "exact_retention_mean": 0.9064276666666666,
+        "exact_retention_p05": 0.851595,
+        "adjacent_or_exact_mean": 1.0,
+        "two_band_jump_mean": 0.0,
+        "spearman_mean": 0.9857301402551178
+      }
+    },
+    "deterministic_benchmarks": {
+      "equal_domain_1_6": {
+        "exact_retention": 0.8944,
+        "adjacent_or_exact": 1.0,
+        "two_band_jump_rate": 0.0,
+        "spearman_vs_normative": 0.9780965993941294
+      },
+      "item_equal_1_25": {
+        "exact_retention": 0.9283,
+        "adjacent_or_exact": 1.0,
+        "two_band_jump_rate": 0.0,
+        "spearman_vs_normative": 0.989929833683288
+      },
+      "cut_minus_5": {
+        "exact_retention": 0.8004,
+        "adjacent_or_exact": 1.0,
+        "two_band_jump_rate": 0.0,
+        "spearman_vs_normative": 1.0
+      },
+      "cut_plus_5": {
+        "exact_retention": 0.7938,
+        "adjacent_or_exact": 1.0,
+        "two_band_jump_rate": 0.0,
+        "spearman_vs_normative": 1.0
+      }
+    },
+    "boundary_flip_by_distance": {
+      "0_to_2_pts": {
+        "n_profiles": 1623,
+        "any_single_halfstep_flip_rate": 1.0
+      },
+      "2_to_5_pts": {
+        "n_profiles": 2423,
+        "any_single_halfstep_flip_rate": 0.36483697895171274
+      },
+      "5_to_10_pts": {
+        "n_profiles": 4063,
+        "any_single_halfstep_flip_rate": 0.0
+      },
+      "gt_10_pts": {
+        "n_profiles": 1891,
+        "any_single_halfstep_flip_rate": 0.0
+      }
+    },
+    "non_ai_max_scores": {
+      "normative": 85.0,
+      "equal_domain_1_6": 83.333333,
+      "item_equal_1_25": 84.0
+    }
+  },
+  "multi_seed_summary": [
+    {
+      "seed": 202702,
+      "raisr_full_exact": 0.7137,
+      "naive_checklist_exact": 0.4735,
+      "mscore_dk0_exact": 0.4319,
+      "single_pol_dk05_exact": 0.6128,
+      "avail_case_exact": 0.7897,
+      "emp_prev_exact": 0.7252,
+      "dk075_exact": 0.6949,
+      "dk100_exact": 0.5132,
+      "oracle_exact": 0.9278,
+      "primary_gain": 0.24020000000000002,
+      "polarity_marginal_gain": 0.10089999999999999,
+      "dk05_marginal_gain": 0.2818,
+      "alpha20_adj_or_exact": 0.9999893333333334,
+      "alpha20_two_band_jump": 1.0666666666666667e-05,
+      "alpha5_adj_or_exact": 0.9978996666666667
+    },
+    {
+      "seed": 202703,
+      "raisr_full_exact": 0.7095,
+      "naive_checklist_exact": 0.474,
+      "mscore_dk0_exact": 0.4324,
+      "single_pol_dk05_exact": 0.6179,
+      "avail_case_exact": 0.7968,
+      "emp_prev_exact": 0.7272,
+      "dk075_exact": 0.7,
+      "dk100_exact": 0.5218,
+      "oracle_exact": 0.931,
+      "primary_gain": 0.23550000000000004,
+      "polarity_marginal_gain": 0.09160000000000001,
+      "dk05_marginal_gain": 0.2771,
+      "alpha20_adj_or_exact": 0.9999946666666667,
+      "alpha20_two_band_jump": 5.333333333333333e-06,
+      "alpha5_adj_or_exact": 0.9962873333333334
+    },
+    {
+      "seed": 202704,
+      "raisr_full_exact": 0.7185,
+      "naive_checklist_exact": 0.4854,
+      "mscore_dk0_exact": 0.4357,
+      "single_pol_dk05_exact": 0.62,
+      "avail_case_exact": 0.7899,
+      "emp_prev_exact": 0.7296,
+      "dk075_exact": 0.6977,
+      "dk100_exact": 0.5124,
+      "oracle_exact": 0.9352,
+      "primary_gain": 0.23310000000000003,
+      "polarity_marginal_gain": 0.09850000000000003,
+      "dk05_marginal_gain": 0.28280000000000005,
+      "alpha20_adj_or_exact": 0.9999296666666667,
+      "alpha20_two_band_jump": 7.033333333333333e-05,
+      "alpha5_adj_or_exact": 0.9955976666666667
+    },
+    {
+      "seed": 202705,
+      "raisr_full_exact": 0.7035,
+      "naive_checklist_exact": 0.4759,
+      "mscore_dk0_exact": 0.4212,
+      "single_pol_dk05_exact": 0.6162,
+      "avail_case_exact": 0.7851,
+      "emp_prev_exact": 0.7178,
+      "dk075_exact": 0.6971,
+      "dk100_exact": 0.5293,
+      "oracle_exact": 0.9206,
+      "primary_gain": 0.22760000000000002,
+      "polarity_marginal_gain": 0.08730000000000004,
+      "dk05_marginal_gain": 0.2823,
+      "alpha20_adj_or_exact": 0.999995,
+      "alpha20_two_band_jump": 5e-06,
+      "alpha5_adj_or_exact": 0.9958073333333333
+    },
+    {
+      "seed": 202706,
+      "raisr_full_exact": 0.7142,
+      "naive_checklist_exact": 0.4794,
+      "mscore_dk0_exact": 0.4276,
+      "single_pol_dk05_exact": 0.6184,
+      "avail_case_exact": 0.7915,
+      "emp_prev_exact": 0.7283,
+      "dk075_exact": 0.7046,
+      "dk100_exact": 0.5176,
+      "oracle_exact": 0.932,
+      "primary_gain": 0.23479999999999995,
+      "polarity_marginal_gain": 0.0958,
+      "dk05_marginal_gain": 0.28659999999999997,
+      "alpha20_adj_or_exact": 0.9999883333333333,
+      "alpha20_two_band_jump": 1.1666666666666666e-05,
+      "alpha5_adj_or_exact": 0.997251
+    }
+  ],
+  "multi_seed_means": {
+    "raisr_full_exact_mean": 0.7118800000000001,
+    "naive_checklist_exact_mean": 0.47763999999999995,
+    "mscore_dk0_exact_mean": 0.42976000000000003,
+    "single_pol_dk05_exact_mean": 0.61706,
+    "avail_case_exact_mean": 0.7906000000000001,
+    "emp_prev_exact_mean": 0.7256199999999999,
+    "dk075_exact_mean": 0.69886,
+    "dk100_exact_mean": 0.51886,
+    "dk075_exact_sd": 0.0036868685900096876,
+    "dk100_exact_sd": 0.006946078030082889,
+    "primary_gain_mean": 0.23424,
+    "polarity_marginal_gain_mean": 0.09482000000000002,
+    "dk05_marginal_gain_mean": 0.28212000000000004,
+    "alpha20_adj_or_exact_mean": 0.9999794,
+    "alpha20_two_band_jump_mean": 2.0599999999999996e-05
+  },
+  "correlation_and_mnar_sweeps": {
+    "rho_neg03_mcar": {
+      "raisr_full_exact": 0.7003,
+      "naive_checklist_exact": 0.4765,
+      "mscore_dk0_exact": 0.4145,
+      "single_pol_dk05_exact": 0.6779,
+      "avail_case_exact": 0.766,
+      "emp_prev_exact": 0.7175,
+      "dk075_exact": 0.6826,
+      "dk100_exact": 0.5071,
+      "primary_gain": 0.22380000000000005,
+      "realized_prob_z1_given_dk": 0.5593
+    },
+    "rho_zero_mcar": {
+      "raisr_full_exact": 0.7067,
+      "naive_checklist_exact": 0.4707,
+      "mscore_dk0_exact": 0.4286,
+      "single_pol_dk05_exact": 0.6097,
+      "avail_case_exact": 0.7861,
+      "emp_prev_exact": 0.7177,
+      "dk075_exact": 0.6903,
+      "dk100_exact": 0.5167,
+      "primary_gain": 0.236,
+      "realized_prob_z1_given_dk": 0.5582
+    },
+    "rho_pos03_mcar": {
+      "raisr_full_exact": 0.7095,
+      "naive_checklist_exact": 0.4721,
+      "mscore_dk0_exact": 0.447,
+      "single_pol_dk05_exact": 0.5586,
+      "avail_case_exact": 0.8037,
+      "emp_prev_exact": 0.728,
+      "dk075_exact": 0.7112,
+      "dk100_exact": 0.527,
+      "primary_gain": 0.2374,
+      "realized_prob_z1_given_dk": 0.556
+    },
+    "rho_zero_mnar_strong": {
+      "raisr_full_exact": 0.6279,
+      "naive_checklist_exact": 0.4346,
+      "mscore_dk0_exact": 0.3456,
+      "single_pol_dk05_exact": 0.6191,
+      "avail_case_exact": 0.7356,
+      "emp_prev_exact": 0.668,
+      "dk075_exact": 0.7609,
+      "dk100_exact": 0.7002,
+      "primary_gain": 0.19330000000000003,
+      "realized_prob_z1_given_dk": 0.7356
+    },
+    "uninflated_hierarchical_eurostat_mcar": {
+      "raisr_full_exact": 0.7098,
+      "naive_checklist_exact": 0.5644,
+      "mscore_dk0_exact": 0.4724,
+      "single_pol_dk05_exact": 0.6058,
+      "avail_case_exact": 0.7872,
+      "emp_prev_exact": 0.715,
+      "primary_gain": 0.14539999999999997,
+      "polarity_marginal_gain": 0.10399999999999998,
+      "dk05_marginal_gain": 0.2374,
+      "false_critical_raisr": 0.0002,
+      "false_critical_avail_case": 0.0223
+    }
+  },
+  "three_engine_parity_and_worked_case": {
+    "n_random_vectors": 20000,
+    "n_total_tested": 20006,
+    "exact_3runtime_agreement_count": 20006,
+    "exact_3runtime_agreement_rate": 1.0,
+    "unquantized_neumaier_ulp_disagreements": 13323,
+    "unquantized_neumaier_band_flips": 0,
+    "worked_18emp_sme": {
+      "case_name": "18-employee professional-services firm adopting public GenAI without formal IT staff",
+      "answers": {
+        "H1": "no",
+        "H2": "no",
+        "H3": "yes",
+        "H4": "yes",
+        "H5": "no",
+        "H6": "yes",
+        "G1": "yes",
+        "G2": "no",
+        "G3": "no",
+        "G4": "dk",
+        "G5": "no",
+        "I1": "no",
+        "I2": "dk",
+        "I3": "no",
+        "I4": "dk",
+        "A1": "yes",
+        "A2": "yes",
+        "A3": "yes",
+        "A4": "dk",
+        "D1": "yes",
+        "D2": "no",
+        "D3": "dk",
+        "V1": "yes",
+        "V2": "no",
+        "V3": "dk"
+      },
+      "python_quantized_total": 68.208333333,
+      "js_quantized_total": 68.208333333,
+      "python_band": "High",
+      "js_band": "High",
+      "unknown_count": 6,
+      "dimensions": {
+        "ai_exposure": 87.5,
+        "data_handling": 50.0,
+        "security_hygiene": 50.0,
+        "governance": 70.0,
+        "vendor_dependence": 83.3333,
+        "incident_readiness": 75.0
+      },
+      "ranked_actions_py_equals_js": true,
+      "ranked_actions": [
+        {
+          "dimension": "incident_readiness",
+          "label": "Incident readiness",
+          "score": 75.0,
+          "weight": 0.25,
+          "contribution": 18.75,
+          "band": "High",
+          "action": "Exercise the plan annually.",
+          "criterion_status": "criterion core (CSBS/CSLS incident items)",
+          "order": 1
+        },
+        {
+          "dimension": "ai_exposure",
+          "label": "AI/LLM exposure",
+          "score": 87.5,
+          "weight": 0.15,
+          "contribution": 13.125,
+          "band": "Critical",
+          "action": "Stop high-risk AI use until governed.",
+          "criterion_status": "content validity only (Eurostat anchor)",
+          "order": 2
+        },
+        {
+          "dimension": "security_hygiene",
+          "label": "Security hygiene",
+          "score": 50.0,
+          "weight": 0.25,
+          "contribution": 12.5,
+          "band": "Medium",
+          "action": "Add staff training and cyber insurance review.",
+          "criterion_status": "criterion core (CSBS variables)",
+          "order": 0
+        },
+        {
+          "dimension": "governance",
+          "label": "Governance & accountability",
+          "score": 70.0,
+          "weight": 0.15,
+          "contribution": 10.5,
+          "band": "High",
+          "action": "Written responsibilities; supplier security checks.",
+          "criterion_status": "secondary (CSLS/CSBS policy proxies)",
+          "order": 4
+        },
+        {
+          "dimension": "vendor_dependence",
+          "label": "Vendor dependence",
+          "score": 83.33333333333334,
+          "weight": 0.1,
+          "contribution": 8.333333333333334,
+          "band": "High",
+          "action": "Supplier security requirements in contracts.",
+          "criterion_status": "content validity only",
+          "order": 5
+        },
+        {
+          "dimension": "data_handling",
+          "label": "Data handling",
+          "score": 50.0,
+          "weight": 0.1,
+          "contribution": 5.0,
+          "band": "Medium",
+          "action": "Written data-handling policy; backups tested.",
+          "criterion_status": "content validity only",
+          "order": 3
+        }
+      ],
+      "naive_single_polarity_dk0_comparison": {
+        "score": 40.0,
+        "band": "Medium",
+        "underestimation_points": 28.21
+      }
+    }
+  }
+}

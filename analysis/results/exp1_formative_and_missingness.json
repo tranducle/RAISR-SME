@@ -1,0 +1,352 @@
+{
+  "claim_id": "K2",
+  "legacy_waterfall_audit": {
+    "CSBS_2025": {
+      "n_raw_interviews": 3835,
+      "n_final_complete_case": 24,
+      "n_final_in_business_frame": 0,
+      "total_rows_lost": 3811,
+      "lost_not_asked_routing": 3807,
+      "lost_non_binary_coding_mismatch": 0,
+      "lost_respondent_dk_refused": 4,
+      "share_lost_not_asked_routing": 0.999,
+      "share_lost_structural_routing_and_coding": 0.999,
+      "selection_bias": {
+        "cc_breach_rate": null,
+        "excluded_breach_rate": 0.2812,
+        "fisher_p_breach_difference": null,
+        "cc_large_250plus_share": null,
+        "excluded_large_250plus_share": 0.0862
+      },
+      "steps": [
+        {
+          "wave": "2025",
+          "item_id": "H1",
+          "selected_var": "policy_comb",
+          "var_label": "NET policy: Any cover in place within policies",
+          "n_before": 3835,
+          "n_after": 2107,
+          "dropped_total": 1728,
+          "dropped_not_asked_routing": 1728,
+          "dropped_dk_refused": 0,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2025",
+          "item_id": "H2",
+          "selected_var": "govtact_comb3",
+          "var_label": "NET govtact: Changes made: People/training changes",
+          "n_before": 2107,
+          "n_after": 560,
+          "dropped_total": 1547,
+          "dropped_not_asked_routing": 1547,
+          "dropped_dk_refused": 0,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2025",
+          "item_id": "H5",
+          "selected_var": "reportb17",
+          "var_label": "Q77 Who was this breach or attack reported to?: Website administrator",
+          "n_before": 560,
+          "n_after": 131,
+          "dropped_total": 429,
+          "dropped_not_asked_routing": 429,
+          "dropped_dk_refused": 0,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2025",
+          "item_id": "H6",
+          "selected_var": "reportb2",
+          "var_label": "Q77 Who was this breach or attack reported to?: Antivirus company",
+          "n_before": 131,
+          "n_after": 131,
+          "dropped_total": 0,
+          "dropped_not_asked_routing": 0,
+          "dropped_dk_refused": 0,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2025",
+          "item_id": "I1",
+          "selected_var": "scheme10",
+          "var_label": "Q24D Which, if any, of the following have you heard of?: Cyber Action Plan for s",
+          "n_before": 131,
+          "n_after": 86,
+          "dropped_total": 45,
+          "dropped_not_asked_routing": 41,
+          "dropped_dk_refused": 4,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2025",
+          "item_id": "I3",
+          "selected_var": "corprisk",
+          "var_label": "Q33I Did your latest annual report cover any cyber security risks faced by your ",
+          "n_before": 86,
+          "n_after": 24,
+          "dropped_total": 62,
+          "dropped_not_asked_routing": 62,
+          "dropped_dk_refused": 0,
+          "dropped_non_binary_label": 0
+        }
+      ]
+    },
+    "CSBS_2024": {
+      "n_raw_interviews": 3434,
+      "n_final_complete_case": 25,
+      "n_final_in_business_frame": 0,
+      "total_rows_lost": 3409,
+      "lost_not_asked_routing": 3402,
+      "lost_non_binary_coding_mismatch": 0,
+      "lost_respondent_dk_refused": 7,
+      "share_lost_not_asked_routing": 0.9979,
+      "share_lost_structural_routing_and_coding": 0.9979,
+      "selection_bias": {
+        "cc_breach_rate": null,
+        "excluded_breach_rate": 0.2875,
+        "fisher_p_breach_difference": null,
+        "cc_large_250plus_share": null,
+        "excluded_large_250plus_share": 0.085
+      },
+      "steps": [
+        {
+          "wave": "2024",
+          "item_id": "H1",
+          "selected_var": "policy_comb",
+          "var_label": "NET policy: Any cover in place within policies",
+          "n_before": 3434,
+          "n_after": 1753,
+          "dropped_total": 1681,
+          "dropped_not_asked_routing": 1681,
+          "dropped_dk_refused": 0,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2024",
+          "item_id": "H2",
+          "selected_var": "govtact_comb3",
+          "var_label": "NET govtact: Changes made: People/training changes",
+          "n_before": 1753,
+          "n_after": 526,
+          "dropped_total": 1227,
+          "dropped_not_asked_routing": 1227,
+          "dropped_dk_refused": 0,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2024",
+          "item_id": "H5",
+          "selected_var": "reportb17",
+          "var_label": "Q77 Who was this breach or attack reported to?: Website administrator",
+          "n_before": 526,
+          "n_after": 135,
+          "dropped_total": 391,
+          "dropped_not_asked_routing": 391,
+          "dropped_dk_refused": 0,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2024",
+          "item_id": "H6",
+          "selected_var": "reportb2",
+          "var_label": "Q77 Who was this breach or attack reported to?: Antivirus company",
+          "n_before": 135,
+          "n_after": 135,
+          "dropped_total": 0,
+          "dropped_not_asked_routing": 0,
+          "dropped_dk_refused": 0,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2024",
+          "item_id": "I1",
+          "selected_var": "scheme10",
+          "var_label": "Q24D Which, if any, of the following have you heard of?: Cyber Action Plan for s",
+          "n_before": 135,
+          "n_after": 107,
+          "dropped_total": 28,
+          "dropped_not_asked_routing": 27,
+          "dropped_dk_refused": 1,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2024",
+          "item_id": "I3",
+          "selected_var": "corprisk",
+          "var_label": "Q33I Did your latest annual report cover any cyber security risks faced by your ",
+          "n_before": 107,
+          "n_after": 25,
+          "dropped_total": 82,
+          "dropped_not_asked_routing": 76,
+          "dropped_dk_refused": 6,
+          "dropped_non_binary_label": 0
+        }
+      ]
+    },
+    "CSBS_2023": {
+      "n_raw_interviews": 3991,
+      "n_final_complete_case": 367,
+      "n_final_in_business_frame": 366,
+      "total_rows_lost": 3624,
+      "lost_not_asked_routing": 3140,
+      "lost_non_binary_coding_mismatch": 165,
+      "lost_respondent_dk_refused": 319,
+      "share_lost_not_asked_routing": 0.8664,
+      "share_lost_structural_routing_and_coding": 0.912,
+      "selection_bias": {
+        "cc_breach_rate": 0.2896,
+        "excluded_breach_rate": 0.1557,
+        "fisher_p_breach_difference": 1.0789487852580189e-09,
+        "cc_large_250plus_share": 0.3306,
+        "excluded_large_250plus_share": 0.1029
+      },
+      "steps": [
+        {
+          "wave": "2023",
+          "item_id": "H2",
+          "selected_var": "trained",
+          "var_label": "Q33B In the last 12 months, have you carried out any cyber security training or ",
+          "n_before": 3991,
+          "n_after": 3892,
+          "dropped_total": 99,
+          "dropped_not_asked_routing": 0,
+          "dropped_dk_refused": 99,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2023",
+          "item_id": "H6",
+          "selected_var": "Step8",
+          "var_label": "DERIVED: 10 Steps - Logging and monitoring (not comparable with CSBS 2022 or ear",
+          "n_before": 3892,
+          "n_after": 3892,
+          "dropped_total": 0,
+          "dropped_not_asked_routing": 0,
+          "dropped_dk_refused": 0,
+          "dropped_non_binary_label": 0
+        },
+        {
+          "wave": "2023",
+          "item_id": "I1",
+          "selected_var": "incidactiona",
+          "var_label": "Q63B Which of the following, if any, do you do/plan to do when you experience a ",
+          "n_before": 3892,
+          "n_after": 3593,
+          "dropped_total": 299,
+          "dropped_not_asked_routing": 0,
+          "dropped_dk_refused": 134,
+          "dropped_non_binary_label": 165
+        },
+        {
+          "wave": "2023",
+          "item_id": "I3",
+          "selected_var": "corprisk",
+          "var_label": "Q33I Did your latest annual report cover any cyber security risks faced by your ",
+          "n_before": 3593,
+          "n_after": 367,
+          "dropped_total": 3226,
+          "dropped_not_asked_routing": 3140,
+          "dropped_dk_refused": 86,
+          "dropped_non_binary_label": 0
+        }
+      ]
+    }
+  },
+  "unrouted_formative_diagnostics": {
+    "CSBS_2025": {
+      "n_complete": 1973,
+      "n_items": 8,
+      "vifs": {
+        "manage1": 1.2942,
+        "manage2": 1.0847,
+        "manage3": 1.9144,
+        "manage4": 1.7694,
+        "trained": 1.4386,
+        "supplyrisk_any": 1.2772,
+        "incidactiona": 1.4751,
+        "incidactionb": 1.3954
+      },
+      "max_vif": 1.9144,
+      "mean_vif": 1.4561,
+      "condition_number": 2.8139,
+      "kr20": 0.7358,
+      "mean_abs_pearson": 0.2592,
+      "max_abs_pearson": 0.6211,
+      "mean_abs_tetrachoric": 0.4038,
+      "max_abs_tetrachoric": 0.8295
+    },
+    "CSBS_2024": {
+      "n_complete": 1824,
+      "n_items": 8,
+      "vifs": {
+        "manage1": 1.2764,
+        "manage2": 1.0701,
+        "manage3": 1.7848,
+        "manage4": 1.6827,
+        "trained": 1.4204,
+        "supplyrisk_any": 1.2963,
+        "incidactiona": 1.5006,
+        "incidactionb": 1.4071
+      },
+      "max_vif": 1.7848,
+      "mean_vif": 1.4298,
+      "condition_number": 2.6485,
+      "kr20": 0.7255,
+      "mean_abs_pearson": 0.2508,
+      "max_abs_pearson": 0.5759,
+      "mean_abs_tetrachoric": 0.3944,
+      "max_abs_tetrachoric": 0.787
+    },
+    "CSBS_2023": {
+      "n_complete": 3280,
+      "n_items": 3,
+      "vifs": {
+        "trained": 1.1056,
+        "incidactiona": 1.2635,
+        "incidactionb": 1.2136
+      },
+      "max_vif": 1.2635,
+      "mean_vif": 1.1942,
+      "condition_number": 1.6655,
+      "kr20": 0.5608,
+      "mean_abs_pearson": 0.3042,
+      "max_abs_pearson": 0.407,
+      "mean_abs_tetrachoric": 0.5279,
+      "max_abs_tetrachoric": 0.6334
+    },
+    "CSLS_W1_W4": {
+      "n_complete": 1941,
+      "n_items": 6,
+      "vifs": {
+        "board_resp": 1.141,
+        "desig_staff": 1.1957,
+        "incid_proc": 1.3823,
+        "sec_rules": 1.1321,
+        "gov_docs": 1.352,
+        "cyber_ins_gap": 1.1089
+      },
+      "max_vif": 1.3823,
+      "mean_vif": 1.2187,
+      "condition_number": 2.0256,
+      "kr20": 0.6611,
+      "mean_abs_pearson": 0.2461,
+      "max_abs_pearson": 0.4462,
+      "mean_abs_tetrachoric": 0.4121,
+      "max_abs_tetrachoric": 0.7022
+    }
+  },
+  "summary_metrics": {
+    "csbs_2023_legacy_n": 367,
+    "csbs_2024_legacy_n": 25,
+    "csbs_2025_legacy_n": 24,
+    "min_structural_drop_share_2024_2025": 0.9979,
+    "pure_not_asked_share_2023": 0.8664,
+    "pure_not_asked_share_2024": 0.9979,
+    "pure_not_asked_share_2025": 0.999,
+    "pooled_3wave_not_asked_share": 0.954353,
+    "max_vif_across_all_4_datasets": 1.9144,
+    "vif_ceiling_threshold": 3.3
+  }
+}

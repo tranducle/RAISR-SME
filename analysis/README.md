@@ -1,114 +1,33 @@
-# Analysis
+# Analysis and Replication Suite (ICIIT 2027)
 
-The scripts behind every estimate the paper reports, and their committed outputs.
+Deterministic scripts behind every empirical and Monte Carlo estimate reported in the ICIIT 2027 manuscript, along with their committed JSON outputs in `analysis/results/`.
+
+## Single-Command Execution
+
+Run from the repository root:
 
 ```bash
 pip install -r requirements.txt
-# obtain the microdata first — see ../data/README.md
-python3 analysis/arm1_cross_sectional.py
-python3 analysis/arm2_panel_lagged.py
-python3 analysis/instrument_validation.py
-python3 analysis/auxiliary_analyses.py
+bash analysis/run_all.sh
 ```
 
-Run from the **repository root**, not from this directory: each script resolves `data/` and
-`results/` relative to its own location, so the paths work either way, but the commands above are
-the ones that have been exercised.
+When licensed UK Data Archive (UKDA) `.dta` files are placed in `data/` (or supplied via `RAISR_DATA_DIR`; see `DATA.md` and `data/README.md` for SHA-256 checksums and End User Licence access routes), `run_all.sh` executes the full empirical and simulation pipeline end to end. When UKDA microdata is absent, `run_all.sh` runs offline NIST CSF 2.0 catalog verification, 20,006-vector three-runtime parity tests, and regression verification against the committed `analysis/results/*.json` outputs. Exported plot-summary CSVs write to `analysis/results/summaries/` by default (`RAISR_SUMMARY_DIR` optional override).
 
----
+## Script-to-Manuscript Claim Map
 
-## What each script is
+| Script | Data Inputs | Output File | Manuscript Section & Claims |
+| :- | :- | :- | :- |
+| `verify_ids.py` | `catalogs_nist_csf_2_0.csv`, `../instrument/nist_csf2_crosswalk.json` | `results/nist_csf2_id_verification.json` | Section 3.1, Table 2 (`26/26` NIST CSF 2.0 subcategory IDs) |
+| `exp1_formative_and_missingness.py` | UK CSBS 2023, 2024, 2025; UK CSLS W1 to W4 | `results/exp1_formative_and_missingness.json` | Section 5.1, Table 4 (`95.44%` 3-wave skip-routing loss; max `VIF = 1.9144`) |
+| `exp2_common_sample_and_mechanisms.py` | UK CSLS Waves 1 to 4 (SN 9356) | `results/exp2_common_sample_and_mechanisms.json` | Section 5.3, Figure 3, Table 6 (`N = 3,061` across `2,196` firms; `n = 865` genuine transitions across `575` firms; Mundlak, dynamic persistence, cross-lagged, placebo) |
+| `exp3_sme_size_bridge_and_auc.py` | UK CSBS 2023 to 2025 (`N = 8,086`) + UK CSLS | `results/exp3_sme_size_bridge_and_auc.json` | Section 5.2, Figure 2, Table 5 (split-ballot-normalized SME size strata, CSLS Medium-SME bridge, 5-fold OOF ROC AUC) |
+| `exp4_sensitivity_and_worked_examples.py` | UK CSBS 2025 + Eurostat `isoc_eb_ai` + `bank_v1.json` | `results/exp4_sensitivity_and_worked_examples.json` | Section 3.3, Table 3, Section 5.4, Figure 4, Table 7 (`5 x 10,000` SME profiles, `2x2` ablations, uninflated Eurostat check, Dirichlet stability, `20,006`-vector parity, 18-employee trace) |
+| `test_iciit_upgrades.py` | Committed `results/*.json` + `verify_ids.py` | stdout exit status | Automated verification of all central manuscript numbers |
 
-| Script | Needs | Emits | Reported in the paper as |
-| --- | --- | --- | --- |
-| `arm1_cross_sectional.py` | CSBS 9404, 9285, 9101 | `results/arm1_cross_sectional.json` | Arm 1 — cross-sectional criterion test |
-| `arm2_panel_lagged.py` | CSLS 9356 | `results/arm2_panel_lagged.json` | Arm 2 — lagged-posture panel test |
-| `instrument_validation.py` | CSBS ×3, CSLS 9356, Eurostat | `results/instrument_validation.json` | Coverage audit, reliability, scoring mechanics |
-| `auxiliary_analyses.py` | CSBS 9404 + 8971 | `results/auxiliary_analyses.json` | Secondary: matched-pair diagnostic, trend series |
-| `csbs_common.py` | — | — | **Library, not an entry point** (see below) |
+Legacy baseline scripts (`arm1_cross_sectional.py`, `arm2_panel_lagged.py`, `instrument_validation.py`, `auxiliary_analyses.py`, `csbs_common.py`) are preserved intact for historical provenance.
 
-`csbs_common.py` is imported by the other CSBS scripts for wave loading, item risk-coding, the core
-score, AUC, KR-20 and the power calculation. It is executable, but running it directly fits the
-*earlier* bivariate specification — retained because `arm1_cross_sectional.py` extends rather than
-replaces it. **Nothing the paper reports comes from its `__main__`.** The same caution applies to the
-provisional item→variable map inside it: the mapping the paper reports is the audited one in
-`instrument_validation.py`.
+## Important Interpretation Notes
 
----
-
-## The four analyses, in one paragraph each
-
-### `arm1_cross_sectional.py` — Arm 1
-
-Weighted GLM Binomial (`freq_weights` = normalised survey weights) of reported breach
-(`Cybercrime_all`, among those asked) on core-score *z* + size + sector, one model per wave. Size and
-sector are in the primary model because the pre-registered specification requires them, not because
-they improved it. Robustness: the same specification unweighted. Reported per wave: n business, n
-asked, n complete-case, outcome rate, 80%-power detectable OR (Hsieh et al. 1998), odds ratio per SD
-with 95% CI, rank-based AUC, and missingness counts.
-
-The core score is a **gap** score, so an OR below 1 means *more gaps, fewer reported breaches*. The
-result is negative and is reported as such. `detection_diagnostic` in the output carries the
-plain-language version — the breach rate among firms with a formal policy against those without.
-
-### `arm2_panel_lagged.py` — Arm 2
-
-The timing test Arm 1 cannot run: posture measured in one wave, outcome in the next, on the same
-organisations. Two specification decisions were pre-committed rather than chosen after seeing the
-estimates, and both are visible in the output:
-
-1. **Frame.** The primary frame is business organisations; the high-income charity sub-sample is
-   estimated separately as a robustness frame rather than pooled into the headline. All three frames
-   (`business`, `charity`, `pooled`) are emitted.
-2. **Sample harmonisation.** The lagged logit and the firm-fixed-effects model run on **one**
-   harmonised sample, so the two estimates differ by specification and not by who is in them. The
-   maximal-sample FE is kept as a labelled robustness row.
-
-Logits are clustered by `LongId` with size and wave fixed effects; the FE row is a within-firm linear
-probability model. The 5-item row is the same specification without cyber insurance. Each model in
-`models[]` carries its own `label`, `n`, `n_clusters`, estimate, CI, `p`, and a `direction` field
-(`paradox` / `protective`) so a row cannot be quoted without its sign.
-
-### `instrument_validation.py` — the engine of record
-
-Reads `instrument/bank_v1.json` and runs four things: (1) a **coverage audit** mapping each item onto
-variables in each dataset by scanning variable labels for concept keywords — label-level only, and
-the output says so; (2) **KR-20 reliability** with item-total correlations on the CSBS criterion-core
-items; (3) **scoring mechanics** — five archetypes, monotonicity, band boundaries, action coverage,
-and a ±20% weight-sensitivity sweep; (4) a coverage × respondent-burden comparison against the
-closest published SME self-assessment instruments.
-
-`score_vector()` in this file is the arithmetic the paper's numbers came from.
-`instrument/scoring.py` is a dependency-free port of it, and `instrument/test_scoring.py` holds the
-two side by side — so the engine here is checkable without pandas, numpy, or licensed data.
-
-### `auxiliary_analyses.py` — secondary
-
-A governance matched-pair diagnostic within size × sector strata on CSBS 9404, and the 2016–2025
-posture trend series. Both are **descriptive and secondary**: the matched-pair comparison is
-unadjusted and uses a proxy governance index, and its own output note says "suggestive only". The
-trend crosses the 2020 CSBS mode change (face-to-face → online), which is why it is a trend
-descriptive and not an estimate.
-
----
-
-## Reading the committed results
-
-`results/*.json` are the outputs the paper reports. A successful replication overwrites them with
-identical values.
-
-Three fields are easy to misread:
-
-- **`or_per_sd` in Arm 1 is per SD of the *gap* score.** Below 1 = more gaps, fewer reported
-  breaches. The direction of the substantive claim is the opposite of the direction of the number.
-- **`coef_pp` in Arm 2** is a percentage-point coefficient from a linear probability model. It does
-  not share a scale with `or_per_sd` and cannot be plotted on the same axis without conversion.
-- **`kr20` values in `reliability_csbs`** are computed on 4–6 mapped items, not on the 25-item bank,
-  and two of the three waves rest on 24 and 25 complete cases. They are reported because omitting
-  them would be worse, not because they support the instrument.
-
-## What is not reproducible from this repository
-
-The `n` in every model depends on the licensed microdata, so the numbers cannot be re-derived from
-what is committed here — only re-checked against it once you have obtained the data. The instrument
-half of the repository has no such dependency: bank, engines, and the full test suite run offline.
+1. **Empty Stata `LongId` strings in UK CSLS (`exp2`)**: In `csls_waves_1-4.dta`, 482 Wave-4 Fresh single-wave businesses carry empty-string `LongId == ""` rather than `NaN`. `exp2` assigns distinct `FRESH_<idx>` cluster IDs in full-panel models (`N = 3,061`, `2,196` firms) and restricts lagged and within-firm panel transitions strictly to non-empty `LongId` multi-wave firms (`n = 865`, `575` firms, 100% `wave_gap = 1`).
+2. **Score orientation (`exp3`)**: Raw survey gap scores measure control *absence* (`OR < 1` indicates fewer reported breaches among higher-gap firms); negated maturity scores satisfy `OR_maturity = 1 / OR_gap > 1` and `AUC(-s, y) = 1 - AUC(s, y)` identically.
+3. **Data Redistribution Policy**: UK Data Archive Stata `.dta` files cannot be redistributed publicly under the UKDA End User Licence. All `.dta` checksums and official download study numbers (SN 8969, 8971, 9067, 9101, 9284, 9285, 9356, 9404) are documented in `../DATA.md`, `../data/CHECKSUMS.sha256`, and `../data/README.md`.

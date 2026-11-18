@@ -1,0 +1,49 @@
+{
+  "schema": "raisr-sme-experiment-configs/v2",
+  "frozen_date": "2026-11-18",
+  "instrument_bank": "instrument/bank_v1.json",
+  "nist_crosswalk": "instrument/nist_csf2_crosswalk.json",
+  "nist_catalog": "analysis/catalogs_nist_csf_2_0.csv",
+  "exp1": {
+    "csbs_waves": ["2023", "2024", "2025"],
+    "csls_waves": [1, 2, 3, 4],
+    "vif_ceiling": 3.3,
+    "mme_skip_routing_share": 0.90
+  },
+  "exp2": {
+    "csls_headcount_floor": 50,
+    "empty_longid_handling": "unique_FRESH_cluster_in_full_panel_excluded_from_lags",
+    "bootstrap_seeds": [202711, 202712, 202713, 202714, 202715],
+    "bootstrap_resamples_per_seed": 400,
+    "placebo_seed": 202720,
+    "placebo_permutations": 500,
+    "mme_log_odds": 0.10
+  },
+  "exp3": {
+    "score_normalization": "split_ballot_available_item_mean",
+    "robustness_modes": ["legacy_unnormalized_sum", "unrouted_8item_2024_2025"],
+    "oof_cv_folds": 5,
+    "oof_seeds": [202731, 202732, 202733, 202734, 202735],
+    "auc_bootstrap_resamples_per_seed": 400,
+    "mme_strata_fraction": 0.75
+  },
+  "exp4": {
+    "pilot_seed": 202701,
+    "pilot_n_profiles": 500,
+    "official_seeds": [202702, 202703, 202704, 202705, 202706],
+    "official_n_profiles_per_seed": 10000,
+    "strata_shares": {"micro_1_9": 0.58, "small_10_49": 0.28, "medium_50_249": 0.14},
+    "oracle_dirichlet_alpha0": 5.0,
+    "oracle_draws": 500,
+    "perturbation_alpha0_regimes": [5.0, 20.0, 50.0],
+    "perturbation_draws_per_regime": 300,
+    "correlation_sweep_rho": [-0.3, 0.0, 0.3],
+    "mnar_strength": 0.85,
+    "parity_seed": 202703,
+    "parity_random_vectors": 20000,
+    "mme_concordance_gain": 0.10,
+    "mme_factorial_marginal": 0.05,
+    "mme_stability": 0.90,
+    "mme_parity": 0.999
+  }
+}

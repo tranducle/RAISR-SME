@@ -1,0 +1,249 @@
+{
+  "catalog_subcategories": 185,
+  "active_catalog_subcategories": 106,
+  "checked_files": [
+    "nist_csf2_crosswalk.json"
+  ],
+  "total_occurrences": 26,
+  "unique_ids_count": 26,
+  "unique_ids": [
+    "DE.CM-03",
+    "DE.CM-09",
+    "GV.OC-05",
+    "GV.OV-01",
+    "GV.PO-01",
+    "GV.RM-05",
+    "GV.RR-01",
+    "GV.RR-02",
+    "GV.SC-06",
+    "GV.SC-07",
+    "ID.AM-02",
+    "ID.AM-04",
+    "ID.AM-07",
+    "ID.IM-02",
+    "ID.IM-04",
+    "ID.RA-01",
+    "ID.RA-03",
+    "ID.RA-06",
+    "PR.AA-05",
+    "PR.AT-01",
+    "PR.DS-01",
+    "PR.DS-10",
+    "PR.DS-11",
+    "RC.RP-03",
+    "RS.CO-02",
+    "RS.MA-01"
+  ],
+  "problems": 0,
+  "all_ok": true,
+  "occurrences": [
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 7,
+      "id": "GV.PO-01",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Policy for managing cybersecurity risks is established based on organizational context, cybersecurity strategy, and priorities and is communicated and enforced"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 8,
+      "id": "PR.AT-01",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Personnel are provided with awareness and training so that they possess the knowledge and skills to perform general tasks with cybersecurity risks in mind"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 9,
+      "id": "ID.RA-06",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Risk responses are chosen, prioritized, planned, tracked, and communicated"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 10,
+      "id": "PR.DS-11",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Backups of data are created, protected, maintained, and tested"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 11,
+      "id": "PR.AA-05",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 12,
+      "id": "DE.CM-09",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 13,
+      "id": "RS.MA-01",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "The incident response plan is executed in coordination with relevant third parties once an incident is declared"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 14,
+      "id": "RS.CO-02",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Internal and external stakeholders are notified of incidents"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 15,
+      "id": "ID.IM-02",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Improvements are identified from security tests and exercises, including those done in coordination with suppliers and relevant third parties"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 15,
+      "id": "ID.IM-04",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Incident response plans and other cybersecurity plans that affect operations are established, communicated, maintained, and improved"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 16,
+      "id": "ID.RA-01",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Vulnerabilities in assets are identified, validated, and recorded"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 17,
+      "id": "ID.AM-02",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Inventories of software, services, and systems managed by the organization are maintained"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 18,
+      "id": "DE.CM-03",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Personnel activity and technology usage are monitored to find potentially adverse events"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 19,
+      "id": "ID.RA-03",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Internal and external threats to the organization are identified and recorded"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 20,
+      "id": "PR.DS-10",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "The confidentiality, integrity, and availability of data-in-use are protected"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 21,
+      "id": "PR.DS-01",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "The confidentiality, integrity, and availability of data-at-rest are protected"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 22,
+      "id": "RC.RP-03",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "The integrity of backups and other restoration assets is verified before using them for restoration"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 23,
+      "id": "ID.AM-07",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Inventories of data and corresponding metadata for designated data types are maintained"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 24,
+      "id": "GV.RR-01",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Organizational leadership is responsible and accountable for cybersecurity risk and fosters a culture that is risk-aware, ethical, and continually improving"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 25,
+      "id": "GV.OV-01",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Cybersecurity risk management strategy outcomes are reviewed to inform and adjust strategy and direction"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 26,
+      "id": "GV.RR-02",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Roles, responsibilities, and authorities related to cybersecurity risk management are established, communicated, understood, and enforced"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 27,
+      "id": "GV.SC-06",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Planning and due diligence are performed to reduce risks before entering into formal supplier or other third-party relationships"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 28,
+      "id": "GV.RM-05",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Lines of communication across the organization are established for cybersecurity risks, including risks from suppliers and other third parties"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 29,
+      "id": "GV.OC-05",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Outcomes, capabilities, and services that the organization depends on are understood and communicated"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 30,
+      "id": "ID.AM-04",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "Inventories of services provided by suppliers are maintained"
+    },
+    {
+      "file": "nist_csf2_crosswalk.json",
+      "line": 31,
+      "id": "GV.SC-07",
+      "framework": "nist_csf_2_0",
+      "verdict": "ok",
+      "name": "The risks posed by a supplier, their products and services, and other third parties are understood, recorded, prioritized, assessed, responded to, and monitored over the course of the relationship"
+    }
+  ]
+}

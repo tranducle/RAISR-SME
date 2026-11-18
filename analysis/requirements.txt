@@ -1,15 +1,6 @@
-# Dependencies for the analysis scripts only.
-#
-# The instrument half of this repository (instrument/scoring.py, its CLI, and the parts of
-# instrument/test_scoring.py that do not compare against the numpy engine) needs NONE of this and
-# runs on a bare Python 3.9+ interpreter.
-#
-# Versions below are the ones the committed results in analysis/results/ were produced with, on
-# CPython 3.14.5. Lower bounds rather than pins: nothing here depends on a version-specific
-# behaviour, and pinning exactly would make the artifact harder to run, not easier to trust.
-# If your numbers differ from the committed results, report the versions you used.
-
-pandas>=2.0        # produced with 2.3.3  -- read_stata, value labels
-numpy>=1.24        # produced with 2.4.6
-scipy>=1.10        # produced with 1.17.1 -- rankdata (AUC), normal quantiles (power)
-statsmodels>=0.14  # produced with 0.14.6 -- GLM Binomial, cluster-robust OLS
+# Pinned dependencies for the analysis scripts (CPython 3.14.5).
+# The standalone instrument engine (instrument/scoring.py) requires Python 3.9+ stdlib only.
+pandas==2.3.3
+numpy==2.4.6
+scipy==1.17.1
+statsmodels==0.14.6

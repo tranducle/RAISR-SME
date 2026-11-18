@@ -1,36 +1,51 @@
 cff-version: 1.2.0
 title: >-
-  RAISR-SME: a rapid AI-security readiness instrument for small and
-  medium enterprises
+  RAISR-SME: Polarity-Separated Cyber-AI Risk Triage Under Epistemic Uncertainty
+  and Longitudinal Breach Reporting Salience in Small and Medium-Sized Enterprises
 message: >-
-  This repository accompanies a manuscript that is currently under peer
-  review. Author and affiliation metadata is withheld for anonymous
-  review and will be added on acceptance. Until then, please cite the
-  repository itself rather than attributing it to any individual.
+  If you use the RAISR-SME instrument, item bank, or empirical and Monte Carlo
+  replication suite, please cite this software package and the accompanying
+  ICIIT 2027 manuscript.
 type: software
 authors:
-  - name: Anonymous (author details withheld for peer review)
+  - family-names: Le
+    given-names: Tran Duc
+    email: let@uwstout.edu
+    affiliation: University of Wisconsin-Stout Polytechnic, USA
+  - family-names: Le Dinh
+    given-names: Thang
+    email: Thang.Ledinh@uqtr.ca
+    affiliation: Universite du Quebec a Trois-Rivieres, Canada
+  - family-names: Vu
+    given-names: Manh Chien
+    email: manh-chien.vu@uqo.ca
+    affiliation: Universite du Quebec en Outaouais, Canada
+  - family-names: Tran
+    given-names: Thi Chau Giang
+    email: Thi.Chau.Giang.Tran@uqtr.ca
+    affiliation: Universite du Quebec a Trois-Rivieres, Canada
+repository-code: "https://github.com/tranducle/RAISR-SME"
+url: "https://raisr-sme.vercel.app"
 abstract: >-
-  Reference implementation of the RAISR-SME instrument (item bank v1) and
-  the analysis code behind its evaluation. The instrument is a 25-item,
-  six-dimension self-assessment that returns a 0-100 exposure score, an
-  ordinal band, and a ranked list of remediations, designed for
-  completion by a single respondent in about twenty minutes. The
-  repository contains three independent scoring engines verified against
-  one another, a test suite covering polarity, monotonicity, band
-  boundaries and cross-engine parity, and the scripts producing the
-  cross-sectional (UK Cyber Security Breaches Survey, 2023-2025) and
-  panel (UK Cyber Security Longitudinal Survey, waves 1-4) analyses. No
-  survey microdata is redistributed; every source is documented with its
-  public access route and a checksum.
+  Reference implementation of the RAISR-SME v1.0 25-item ternary cyber-AI
+  self-assessment instrument and the deterministic two-arm empirical and Monte
+  Carlo replication suite for ICIIT 2027. Includes the frozen item bank
+  (bank_v1.json), authoritative NIST CSF 2.0 subcategory crosswalk and verifier
+  (verify_ids.py), three bit-exact scoring engines (Python stdlib, browser
+  JavaScript, and NumPy), automated parity tests across 20,006 vectors, and
+  four analysis suites (exp1 to exp4) evaluating UK Cyber Security Breaches
+  Survey (2023 to 2025) skip-routing and size strata, UK Cyber Security
+  Longitudinal Survey (Waves 1 to 4) Mundlak and timing models, and 50,000
+  empirically anchored Monte Carlo SME profiles. Licensed UK Data Archive
+  microdata is withheld per End User Licence and documented with SHA-256
+  checksums and access instructions in data/README.md.
 keywords:
-  - cybersecurity
-  - small and medium enterprises
-  - risk assessment
-  - self-assessment instrument
-  - artificial intelligence adoption
-  - survey methodology
-  - reproducibility
+  - SME cybersecurity
+  - generative AI governance
+  - formative index validation
+  - epistemic uncertainty
+  - reporting bias
+  - longitudinal panel data
 license: MIT
-version: "1.0.0"
-date-released: "2026-08-20"
+version: "2.0.0"
+date-released: "2026-11-18"

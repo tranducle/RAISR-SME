@@ -1,0 +1,33 @@
+{
+  "schema": "raisr-sme-nist-crosswalk/v1",
+  "bank_version": "v1",
+  "item_count": 25,
+  "unique_nist_csf2_subcategories": 26,
+  "mappings": {
+    "H1": {"dimension": "security_hygiene", "nist_csf_2_0": ["GV.PO-01"], "cisa_cpg": "1.E"},
+    "H2": {"dimension": "security_hygiene", "nist_csf_2_0": ["PR.AT-01"], "cisa_cpg": "2.I"},
+    "H3": {"dimension": "security_hygiene", "nist_csf_2_0": ["ID.RA-06"], "cisa_cpg": "Risk transfer"},
+    "H4": {"dimension": "security_hygiene", "nist_csf_2_0": ["PR.DS-11"], "cisa_cpg": "2.R"},
+    "H5": {"dimension": "security_hygiene", "nist_csf_2_0": ["PR.AA-05"], "cisa_cpg": "2.E"},
+    "H6": {"dimension": "security_hygiene", "nist_csf_2_0": ["DE.CM-09"], "cisa_cpg": "2.T"},
+    "I1": {"dimension": "incident_readiness", "nist_csf_2_0": ["RS.MA-01"], "cisa_cpg": "2.S"},
+    "I2": {"dimension": "incident_readiness", "nist_csf_2_0": ["RS.CO-02"], "cisa_cpg": "4.A"},
+    "I3": {"dimension": "incident_readiness", "nist_csf_2_0": ["ID.IM-02", "ID.IM-04"], "cisa_cpg": "2.S"},
+    "I4": {"dimension": "incident_readiness", "nist_csf_2_0": ["ID.RA-01"], "cisa_cpg": "1.E / CISA KEV"},
+    "A1": {"dimension": "ai_exposure", "nist_csf_2_0": ["ID.AM-02"], "nist_ai_rmf_1_0": "MAP 1.1"},
+    "A2": {"dimension": "ai_exposure", "nist_csf_2_0": ["DE.CM-03"], "nist_ai_rmf_1_0": "GOVERN 1.2 / MANAGE 2.4"},
+    "A3": {"dimension": "ai_exposure", "nist_csf_2_0": ["ID.RA-03"], "nist_ai_rmf_1_0": "MAP 3.4"},
+    "A4": {"dimension": "ai_exposure", "nist_csf_2_0": ["PR.DS-10"], "nist_ai_rmf_1_0": "MEASURE 2.10"},
+    "D1": {"dimension": "data_handling", "nist_csf_2_0": ["PR.DS-01"], "cisa_cpg": "2.K"},
+    "D2": {"dimension": "data_handling", "nist_csf_2_0": ["RC.RP-03"], "cisa_cpg": "2.R"},
+    "D3": {"dimension": "data_handling", "nist_csf_2_0": ["ID.AM-07"], "cisa_cpg": "1.A"},
+    "G1": {"dimension": "governance", "nist_csf_2_0": ["GV.RR-01"], "cisa_cpg": "1.B"},
+    "G2": {"dimension": "governance", "nist_csf_2_0": ["GV.OV-01"], "cisa_cpg": "1.B"},
+    "G3": {"dimension": "governance", "nist_csf_2_0": ["GV.RR-02"], "cisa_cpg": "1.B"},
+    "G4": {"dimension": "governance", "nist_csf_2_0": ["GV.SC-06"], "cisa_cpg": "1.C"},
+    "G5": {"dimension": "governance", "nist_csf_2_0": ["GV.RM-05"], "cisa_cpg": "4.A"},
+    "V1": {"dimension": "vendor_dependence", "nist_csf_2_0": ["GV.OC-05"], "cisa_cpg": "1.C"},
+    "V2": {"dimension": "vendor_dependence", "nist_csf_2_0": ["ID.AM-04"], "cisa_cpg": "1.A"},
+    "V3": {"dimension": "vendor_dependence", "nist_csf_2_0": ["GV.SC-07"], "cisa_cpg": "1.C / CISA KEV"}
+  }
+}

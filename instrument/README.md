@@ -1,157 +1,47 @@
-# The instrument
+# The RAISR-SME v1.0 Instrument (`instrument/`)
 
-Everything needed to field, score, and check RAISR-SME — with no data, no dependencies, and no
-network.
+Everything needed to field, score, and verify the 25-item ternary RAISR-SME v1.0 self-assessment locally with zero external dependencies and zero network telemetry.
 
-| File | What it is |
-| --- | --- |
-| `bank_v1.json` | The frozen item bank. The only source of truth for wording, weights, bands, and action plans. |
-| `scoring.py` | Reference engine + CLI. Pure standard-library Python 3.9+. |
-| `scoring.js` | Browser port of the same arithmetic, for interactive use. |
-| `test_scoring.py` | Eight checks, including cross-engine parity. |
+| File | Role |
+| :- | :- |
+| `bank_v1.json` | Frozen 25-item v1.0 item bank (`CC BY 4.0`): wording, polarity (`risk_when`), rational domain weights, triage bands, ranked action plans, and canonical archetypes. |
+| `nist_csf2_crosswalk.json` | Item-by-item crosswalk mapping all 25 items to 26 verified NIST CSF 2.0 subcategory IDs, NIST AI RMF 1.0 functions, and CISA CPG/KEV anchors (`../analysis/verify_ids.py`). |
+| `scoring.py` | Reference deterministic scoring engine and CLI (pure Python 3.9+ standard library). |
+| `scoring.js` | Client-side browser JavaScript port implementing identical IEEE-754 arithmetic and 9-decimal quantization. |
+| `test_scoring.py` | Eight-check verification suite, including bit-exact Python vs JavaScript vs reference-engine parity across 20,000+ random response vectors. |
 
-```bash
-python3 scoring.py --list-items                       # every item, with its polarity
-python3 scoring.py --archetype small-trained          # score a worked example
-echo '{"H1":"no","A1":"yes"}' | python3 scoring.py    # score your own answers
-python3 scoring.py --json < answers.json              # machine-readable output
-python3 test_scoring.py -n 20000 --seed 7             # prove the engines agree
-```
+## Quick CLI Commands
 
----
+Run from the repository root:
 
-## Bank schema
+- Score a built-in archetype or custom JSON vector via `python3 instrument/scoring.py`
+- Verify NIST CSF 2.0 subcategory mappings via `python3 analysis/verify_ids.py`
+- Run the 8-check cross-runtime parity suite across 20,000 vectors via `bash analysis/run_all.sh`
 
-```jsonc
-{
-  "meta":          { "version": "v1", "item_count": 25, "scale": "risk 0-100, higher = more exposure", … },
-  "freeze_record": { "weights": …, "items": …, "fixes_at_freeze": [ … ] },
-  "dimensions": {
-    "security_hygiene": {
-      "label": "Security hygiene",
-      "items": [
-        { "id": "H1",
-          "q": "Does your business have a formal cybersecurity policy?",
-          "risk_when": "no",                                  // ← polarity, per item
-          "anchor": "CSBS 9404 policy_comb: Yes 2,070 / No 37 (among asked)" }
-      ]
-    }, …
-  },
-  "display_order":  ["security_hygiene", "incident_readiness", "ai_exposure", … ],
-  "weights":        { "security_hygiene": 0.25, … },
-  "bands":          { "Low": [0, 40], "Medium": [40, 65], "High": [65, 85], "Critical": [85, 101] },
-  "response_scale": { "options": ["Yes", "No", "Don't know"], "risk_when_no": …, "risk_when_yes": … },
-  "action_plans":   { "<dimension>": { "Low": "…", "Medium": "…", "High": "…", "Critical": "…" } },
-  "archetypes":     [ { "id": …, "responses": {…}, "expected_total": …, "expected_band": … } ],
-  "known_and_accepted": [ … ]
-}
-```
+## Item Bank Structure and Load-Bearing Key Order
 
-Every item carries an **`anchor`**: the public-survey variable and its marginal distribution that the
-item is grounded in. It is what makes the item bank auditable rather than asserted — a reader can
-open the same dataset and check the anchor.
+Each item in `bank_v1.json` carries its exact question text, polarity (`risk_when: "no"` for 20 protective control-gap items; `risk_when: "yes"` for 5 active AI/cloud exposure items `A1`, `A2`, `A3`, `A4`, `V1`), and public survey or catalog anchor.
 
-### `dimensions` key order is load-bearing; `display_order` is not
+- **Dictionary key order is load-bearing for IEEE-754 floating-point summation:** Both `scoring.py` and `scoring.js` sum items and dimensions sequentially in the dictionary key order of `bank_v1.json["dimensions"]`. `display_order` governs human UI presentation and ranked-action tie-breaking only. Never sort keys in `bank_v1.json`.
 
-The engines sum dimensions in the **key order of the `dimensions` object**, and items in their order
-within it. Floating-point addition is not associative, so re-ordering the keys changes the last bit
-of the total, which can change the band on a vector that lands on a cut point. `display_order` is
-what a human reads and is never used for arithmetic. Reformatting the JSON is safe; **sorting its
-keys is not.**
+## Polarity and Epistemic Uncertainty (`Don't know = 0.5`)
 
----
+| Respondent Answer | Control-Gap Items (`20` items, `risk_when: "no"`) | Exposure Items (`A1..A4, V1`, `risk_when: "yes"`) |
+| :- | :-: | :-: |
+| `Yes` | `0.0` | **`1.0`** |
+| `No` | **`1.0`** | `0.0` |
+| `Don't know` | `0.5` | `0.5` |
 
-## Polarity — the thing to get right
+- Under zero-AI, non-cloud operations with all 20 controls satisfied, `R(0) = 0.0` (`Low`). Because `A1..A4` and `V1` measure gross technological exposure surface in v1.0, an active cloud-and-AI SME satisfying all 20 protective controls carries a deterministic gross exposure floor `R_min = 18.333333333` (`Low` overall tier, `< 40`, with `AI/LLM` domain score `S_3 = 100.0`).
+- Archetype `solo-micro-no-governance` verifies non-AI Criticality reachability (`M3`): zero AI use (`S_3 = 0.0`) and failure across all 21 non-AI items yields `Q(R) = 85.0` (`Critical`).
 
-Twenty items are **gap** items (`risk_when: "no"`): risk when the control is absent.
-Five are **exposure** items (`risk_when: "yes"`): **A1, A2, A3, A4, V1** — risk when the exposure is
-present.
+## Deterministic Quantization Arithmetic
 
-| Answer | `risk_when: "no"` | `risk_when: "yes"` |
-| --- | :---: | :---: |
-| Yes | 0.0 | **1.0** |
-| No | **1.0** | 0.0 |
-| Don't know | 0.5 | 0.5 |
+1. **Division before multiplication:** Dimension score `S_k = (sum_i r_i / m_k) * 100`.
+2. **Explicit sequential loops (not Python 3.12 `sum()`):** Python 3.12's builtin `sum()` uses Neumaier compensated summation, which differs in raw `binary64` ulps on `13,323 / 20,006` vectors (`0` band flips). Explicit loops keep Python and JavaScript identical prior to quantization.
+3. **Nine-decimal quantization (`Q(R) = round(R * 1e9) / 1e9`):** Snaps recurring `binary64` rationals (`LCM = 1200`) onto exact rational cutpoints (`Low` `[0, 40)`, `Medium` `[40, 65)`, `High` `[65, 85)`, `Critical` `[85, 100]`), achieving `20,006 / 20,006` (`100.000%`) three-runtime score and band parity (`exp4_sensitivity_and_worked_examples.py` and `test_scoring.py`, which also cross-checks the retained v1 reference engine in `../analysis/instrument_validation.py`).
 
-A single global `Yes = 0` mapping scores an AI-free firm at AI-exposure **100** and a heavy AI user
-at **0** — the dimension inverted. That was a real defect in the draft bank, and correcting it is
-recorded in `freeze_record.fixes_at_freeze` along with the other fix made at the freeze (a
-double-barrelled backup item that charged a firm without backups twice, across two separately
-weighted dimensions).
+## Licensing and Scope Notes
 
-The archetype `solo-micro-no-governance` is the standing check: every gap item failing, no AI in use,
-total **85.0 / Critical**, and **AI exposure 0.0**. If that dimension ever reads 100, the polarity has
-been re-broken.
-
----
-
-## Scoring, exactly
-
-```
-item risk       ∈ {0, 0.5, 1}                      per the polarity table above
-dimension score = (Σ item risks / n_items) × 100    division BEFORE the ×100
-total           = Σ (dimension score × weight)      in bank key order, sequential addition
-band            = the [lo, hi) interval containing round(total × 1e9) / 1e9
-```
-
-Three details in `scoring.py` look tidy-able and are not — the module docstring states each, and
-`test_scoring.py` fails if any is "fixed":
-
-1. **Division before multiplication.** `(sum / n) * 100` matches `numpy.mean(...) * 100`;
-   `sum * 100 / n` does not, in the last bit.
-2. **Explicit summation loops, not `sum()`.** Since Python 3.12 the builtin applies Neumaier
-   compensated summation — more accurate than the reference engines, and therefore *wrong* for
-   parity. On 1,023 of 5,000 random vectors the two totals differ (`56.125` vs `56.12499999999999`).
-3. **Quantise to nine decimals before the band lookup.** Bands are half-open, so exactly 40.0 must
-   read `Medium`. Across 50,000 random vectors, 83 land exactly on a cut point — about one
-   respondent in 600.
-
----
-
-## The test suite
-
-```
-$ python3 test_scoring.py
-
-archetypes              ok    5 check(s)   every archetype hits its expected total, band, dimensions
-polarity                ok   25 check(s)   per item and per dimension, both directions
-band boundaries         ok    5 check(s)   40/65/85 resolve upward
-monotonicity            ok  500 check(s)   flipping any item toward risk never lowers the total
-don't know              ok    3 check(s)   dk = 0.5, counted and surfaced
-input validation        ok    5 check(s)   unknown answers and out-of-range risks are rejected
-parity vs scoring.js    ok 5000 check(s)   EXACT — bit comparison on float64, not a tolerance
-parity vs paper engine  ok 5000 check(s)   1e-9; bands compared after quantisation on both sides
-
-8 passed, 0 failed, 0 skipped
-```
-
-`-n` sets the random-vector count and `--seed` makes a run reproducible. When Node or numpy is
-missing, the affected check prints `SKIP … -- not a pass` and the summary counts it as skipped.
-**A skip is never reported as a pass**, because an absent dependency is exactly the situation in
-which a silent green line would be most misleading.
-
----
-
-## Using it in your own work
-
-The bank is **CC BY 4.0** — field it, translate it, adapt the wording, cut it down. Two requests, one
-of them technical:
-
-- If you change items, weights, or bands, **bump `meta.version`**. `scoring.py` validates only the
-  25-item/6-dimension shape, so a silently modified v1 will still score, and its numbers will not be
-  comparable to anyone else's.
-- If you re-implement the scoring, run `test_scoring.py` against your engine. The parity harness is
-  the reason three implementations agree here; it will work the same way on a fourth.
-
-## Known and accepted
-
-Recorded in `known_and_accepted` in the bank itself, and repeated here because it belongs in front of
-anyone using the instrument:
-
-- **G3** (incident responsibilities written down) and **I1** (written incident-response plan) both
-  anchor to the same CSLS variable. They are distinct constructs — accountability against runbook —
-  and are kept as separate items. The shared anchor is a limit of the *source coverage*, not a
-  double-count in the scoring.
-- **Reliability of the full 25-item battery is open.** It has never been fielded as a battery. Only
-  the CSBS-mapped core (policy, training, insurance) admits a criterion test, and the coverage audit
-  in `analysis/instrument_validation.py` reports exactly how thin that is.
+- `bank_v1.json` is licensed under **CC BY 4.0**; if items, weights, or bands are modified, increment `meta.version`.
+- Items `G3` (written incident responsibilities) and `I1` (written incident-response plan) map to distinct NIST CSF 2.0 subcategories (`GV.RR-02` vs `RS.MA-01`) while sharing a closest public CSLS proxy anchor; Arm A (`exp4`) evaluates the full 25-item cyber-AI specification synthetically, whereas Arm B (`exp1..exp3`) evaluates non-AI UK CSBS/CSLS proxy subsets empirically.

@@ -1,54 +1,38 @@
-# Data — where to get it
+# Data: Where to Obtain Archival Sources (`RAISR-SME`, ICIIT 2027)
 
-**This directory ships no data, and cannot.** The two survey datasets the analysis runs on are
-distributed by the UK Data Service under an End User Licence that forbids redistribution. What is
-published here instead is everything needed to obtain the identical bytes: the study numbers, the
-catalogue URLs, the exact file inside each archive, and its SHA-256.
+**This directory ships no licensed survey microdata, and cannot.** The two United Kingdom government enterprise survey series analyzed in Arm B (`exp1` through `exp3`) are distributed by the UK Data Service under an End User Licence (EUL) that prohibits public redistribution of respondent-level files. What is published here instead is everything needed to obtain the identical bytes: study numbers, official catalogue URLs, exact file paths inside each archive, and SHA-256 checksums (`CHECKSUMS.sha256`).
 
-Registration with the UK Data Service is **free** and open to anyone; the EUL is accepted online.
-No special access, institutional affiliation, or application is required for these studies.
+Registration with the UK Data Service is free and open to researchers; the EUL is accepted online.
 
----
+## 1. UK Cyber Security Breaches Survey (CSBS, Arm B Cross-Sections: `exp1`, `exp3`, and `exp4` Marginals)
 
-## 1. Cyber Security Breaches Survey (CSBS) — Arm 1
+Repeated cross-sections of UK businesses, charities, and education institutions commissioned annually by the UK government (`N = 8,086` complete-case business interviews pooled across 2023 to 2025 in `exp3`; `11,260` raw business records audited in `exp1`).
 
-Repeated cross-section of UK businesses and charities, commissioned annually by the UK government.
+| Study | Wave | Catalogue URL | Role in ICIIT 2027 Suite |
+| :- | :- | :- | :- |
+| **SN 9404** | 2025 | <https://datacatalogue.ukdataservice.ac.uk/studies/study/9404> | Primary cross-sectional wave (`n = 2,165` businesses) and `exp4` item prevalences |
+| **SN 9285** | 2024 | <https://datacatalogue.ukdataservice.ac.uk/studies/study/9285> | Cross-sectional wave (`n = 1,992` businesses) and 8-item unrouted check |
+| **SN 9101** | 2023 | <https://datacatalogue.ukdataservice.ac.uk/studies/study/9101> | Cross-sectional wave (`n = 3,929` businesses) and skip-routing audit |
+| **SN 8971** | 2016 to 2022 combined | <https://datacatalogue.ukdataservice.ac.uk/studies/study/8971> | Historical trend descriptives only (carries no `Cybercrime_all` breach outcome) |
 
-| Study | Wave | Catalogue | Role |
-| --- | --- | --- | --- |
-| **SN 9404** | 2025 | <https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=9404> | Primary criterion test |
-| **SN 9285** | 2024 | <https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=9285> | Validation wave |
-| **SN 9101** | 2023 | <https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=9101> | Replication wave |
-| **SN 8971** | 2016–2022 combined | <https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8971> | Trend descriptives only |
+> **Important:** `SN 8971` (2016 to 2022 combined banded-cost release) contains hygiene and ransom items without `Cybercrime_all` and is never pooled into breach regressions (`exp1` through `exp3`).
 
-> **SN 8971 carries no breach outcome.** The 2016–2022 combined edition is a banded-cost release:
-> it has the hygiene and ransom items but not `Cybercrime_all`. It is therefore used for trend
-> descriptives and never for criterion modelling. Attempting to pool it into Arm 1 is a mistake the
-> code will not stop you from making.
+## 2. UK Cyber Security Longitudinal Survey (CSLS, Arm B Multi-Wave Panel: `exp1`, `exp2`, `exp3`)
 
-## 2. Cyber Security Longitudinal Survey (CSLS) — Arm 2
+Longitudinal enterprise panel (`>= 50` employees) re-interviewing organizations across Waves 1 to 4 (`N = 3,061` complete-case business records across `2,196` unique organizations; `n = 865` genuine consecutive annual transitions across `575` non-empty `LongId` firms after separating `482` empty-string `LongId == ""` Wave-4 Fresh single-wave businesses).
 
-A true panel — the same organisations re-interviewed across waves — from the same questionnaire
-family as CSBS.
+| Study | Wave | Catalogue URL | Role in ICIIT 2027 Suite |
+| :- | :- | :- | :- |
+| **SN 9356** | Waves 1 to 4 Master | <https://datacatalogue.ukdataservice.ac.uk/studies/study/9356> | **Master panel file required by `exp1`, `exp2`, and `exp3`** |
+| SN 9284 | 2023 (Wave 3) | <https://datacatalogue.ukdataservice.ac.uk/studies/study/9284> | Per-wave archive slice (optional provenance checksum) |
+| SN 9067 | 2022 (Wave 2) | <https://datacatalogue.ukdataservice.ac.uk/studies/study/9067> | Per-wave archive slice (optional provenance checksum) |
+| SN 8969 | 2021 (Wave 1) | <https://datacatalogue.ukdataservice.ac.uk/studies/study/8969> | Per-wave archive slice (optional provenance checksum) |
 
-| Study | Wave | Catalogue | Role |
-| --- | --- | --- | --- |
-| **SN 9356** | 2024 (W4) | <https://datacatalogue.ukdataservice.ac.uk/studies/study/9356> | **Master panel file — the only one Arm 2 needs** |
-| SN 9284 | 2023 (W3) | <https://datacatalogue.ukdataservice.ac.uk/studies/study/9284> | Per-wave slice |
-| SN 9067 | 2022 (W2) | <https://datacatalogue.ukdataservice.ac.uk/studies/study/9067> | Per-wave slice |
-| SN 8969 | 2021 (W1) | <https://datacatalogue.ukdataservice.ac.uk/studies/study/8969> | Per-wave slice |
+> **Scope boundary:** UK CSLS covers medium (`50` to `249` employees) and large (`250+` employees) organizations and contains zero micro (`1` to `9`) or small (`10` to `49`) enterprises.
 
-> **Download SN 9356 alone if you only want to reproduce Arm 2.** Its `csls_waves_1-4.dta` already
-> contains all four waves (1,741 / 1,061 / 852 / 1,222 rows); the other three studies are slices of
-> the same data. Panel key `LongId`, re-interview flag `if_longid`, weight `wght`, outcome
-> `brk_outcome`.
->
-> **Scope:** CSLS covers medium (50–249) and large (250+) organisations. It contains no SMEs in the
-> small-firm sense, which is why Arm 2 reports a mechanism and not an SME point estimate.
+## 3. Eurostat Enterprise AI Adoption (`isoc_eb_ai`, Arm A Anchor: `exp4`)
 
-## 3. Eurostat — AI adoption by enterprise size class
-
-Open data, no registration. Byte-for-byte reproducible from the dissemination API:
+Open data, no registration required. Dataset DOI `10.2908/ISOC_EB_AI` (*Artificial intelligence by size class of enterprise*, <https://ec.europa.eu/eurostat/databrowser/product/page/ISOC_EB_AI>):
 
 ```bash
 mkdir -p data/eurostat
@@ -56,71 +40,37 @@ curl -o data/eurostat/isoc_eb_ai.json \
   "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?format=JSON&lang=EN"
 ```
 
-Dataset DOI `10.2908/isoc_eb_ai` — *Artificial intelligence by size class of enterprise*,
-browsable at <https://ec.europa.eu/eurostat/databrowser/product/page/ISOC_EB_AI>.
+Because Eurostat revises live JSON-stat cubes over time, `CHECKSUMS.sha256` records the exact `2026-06-15` vintage used in `exp4_sensitivity_and_worked_examples.py` (2025 EU27 `E_AI_TANY`: `17.00%` small `10` to `49`, `30.36%` medium `50` to `249`, `55.03%` large `250+`).
 
-The response is a live JSON-stat cube and **is republished by Eurostat as the series is revised**,
-so a later download will not match the checksum below. The `updated` field inside the file records
-the vintage; the one used here is `2026-06-15`.
+## 4. Normative Security Catalogs (NIST CSF 2.0, NIST AI RMF 1.0, CISA CPGs & KEV)
 
-## 4. CISA Known Exploited Vulnerabilities
+- **NIST CSF 2.0 Subcategory Catalog**: Vendored directly at `../analysis/catalogs_nist_csf_2_0.csv` (`106` active subcategories) and verified deterministically against `../instrument/nist_csf2_crosswalk.json` (`26` unique IDs across `25` items) via `../analysis/verify_ids.py`.
+- **CISA Known Exploited Vulnerabilities (KEV)**: Open catalog (<https://www.cisa.gov/known-exploited-vulnerabilities-catalog>); items `I4` and `V3` reference the dated snapshot of `2026-08-17` (`1,666` exploited entries).
 
-Open data, no registration: <https://www.cisa.gov/known-exploited-vulnerabilities-catalog>
-(JSON feed at <https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json>).
+## Expected Directory Layout for Full Local Reruns
 
-Used only for the two dated anchors on items `I4` and `V3` in the item bank — a **snapshot** of
-2026-08-17 (1,666 entries), deliberately not a live count, so the figures in the bank do not silently
-disagree with the paper the day after it was written.
-
----
-
-## Where to put the files
-
-Unzip each UKDS archive directly into this directory. Each expands into its own `UKDA-<SN>-stata/`
-folder and the analysis scripts read from that layout unchanged:
+Place extracted Stata `.dta` distributions (not SPSS or tab-delimited, so `pandas.read_stata` preserves value labels) and `eurostat/isoc_eb_ai.json` under `data/` (either inside `artifact_repo/data/` or at the parent workspace `../data/`, which `exp1..exp4.py` auto-detect):
 
 ```text
 data/
-├── UKDA-9404-stata/stata/stata13/csbs_2025_archive_data_public.dta
-├── UKDA-9285-stata/stata/stata13/csbs_2024_archive_data_public.dta
-├── UKDA-9101-stata/stata/stata13/csbs_2023_22-034904-01_banded_cost_data_v6-1_public.dta
-├── UKDA-8971-stata/stata/stata13/dcms_csbs_combined_2016-2022_banded_cost_data_only_v3_public.dta
-├── UKDA-9356-stata/stata/stata13/csls_waves_1-4.dta
-├── UKDA-9284-stata/stata/stata13/csls_wave3_only_26july2024.dta
-├── UKDA-9067-stata/stata/stata13/j21_079643_wave2_only_16aug2022_with_ids.dta
-├── UKDA-8969-stata/stata/stata13/csls_public_dataset_wave_1.dta
-└── eurostat/isoc_eb_ai.json
+  UKDA-9404-stata/stata/stata13/csbs_2025_archive_data_public.dta
+  UKDA-9285-stata/stata/stata13/csbs_2024_archive_data_public.dta
+  UKDA-9101-stata/stata/stata13/csbs_2023_22-034904-01_banded_cost_data_v6-1_public.dta
+  UKDA-8971-stata/stata/stata13/dcms_csbs_combined_2016-2022_banded_cost_data_only_v3_public.dta
+  UKDA-9356-stata/stata/stata13/csls_waves_1-4.dta
+  UKDA-9284-stata/stata/stata13/csls_wave3_only_26july2024.dta
+  UKDA-9067-stata/stata/stata13/j21_079643_wave2_only_16aug2022_with_ids.dta
+  UKDA-8969-stata/stata/stata13/csls_public_dataset_wave_1.dta
+  eurostat/isoc_eb_ai.json
 ```
 
-Choose the **STATA (.dta)** distribution, not SPSS or tab-delimited. It is the only format that both
-reads with this stack (`pandas.read_stata`, no extra dependency) and preserves the survey's value
-labels, which the item-coverage audit in `analysis/instrument_validation.py` matches on by label.
-
-## Verifying you have the same data
+Verify exact byte integrity with:
 
 ```bash
 cd data && shasum -a 256 -c CHECKSUMS.sha256
 ```
 
-| File | SHA-256 |
-| --- | --- |
-| `csbs_2025_archive_data_public.dta` | `6e796f0023d76f2b8b4b9ded2fef97249e0e8bdf7d09638eeb66603e3eb980d7` |
-| `csbs_2024_archive_data_public.dta` | `de7238376d47828a09d61fe5955547616808d6483ebfc96a80c115a0567763df` |
-| `csbs_2023_22-034904-01_banded_cost_data_v6-1_public.dta` | `80d0589968faf08d8b6e81d85fc1f8a0baab2de1f0ef168c59929d48d5ca5f81` |
-| `dcms_csbs_combined_2016-2022_banded_cost_data_only_v3_public.dta` | `e80c2ae670f524076037d61cb0a8cbf779e6c7bd3884e201bc48d52af8febf13` |
-| `csls_waves_1-4.dta` | `ef4632c26fb1a02c3278bafb707ee11c1a8acb26c7a33d7c2dedcc272c71a306` |
-| `csls_wave3_only_26july2024.dta` | `698734744dbb01a4de5a590d4f2ecc1c02e0f3267f8b106b91b98a15abe1237e` |
-| `j21_079643_wave2_only_16aug2022_with_ids.dta` | `d9d52f150b390e45299ae938b5cb7b85a5d42086afaf11b3a01cfaa01e38f299` |
-| `csls_public_dataset_wave_1.dta` | `e567fed426e1aa9cc6a4d6e022efce3d02b2b6ee4a676f8cc7fc2a8d0f14572f` |
-| `eurostat/isoc_eb_ai.json` (vintage 2026-06-15) | `5c8d7f499bc36b74cbc2e8598fdff24e5c51087cffd99d0c829d2b12da95f9a7` |
+## Key Replication Precautions Verified in `exp1` to `exp3`
 
-A checksum mismatch on a UKDS file means the study has been re-released under a new version — check
-the catalogue page for the edition, and expect estimates to move.
-
-## Two things that will bite a replication
-
-1. **Weights are per wave.** Each CSBS wave carries its own weight variable; pooling waves requires
-   per-wave weights *and* year fixed effects, not a single pooled weight.
-2. **CSBS changed mode in 2020**, face-to-face to online. Any trend statement crossing that year
-   inherits a mode break, and the trend descriptives in `auxiliary_analyses.py` are reported as
-   descriptives for exactly that reason.
+1. **Questionnaire skip-routing vs respondent `DK`**: Split-ballot (`policy_comb`, `govtact_comb3`), breach-contingent (`reportb17`), sector-contingent (`scheme10`), and unlabeled `-1` (`corprisk`) skips must be separated from respondent `Don't know` (including curly apostrophes) before complete-case filtering (`exp1_formative_and_missingness.py`).
+2. **Empty-string `LongId` in CSLS Wave 4**: In `csls_waves_1-4.dta`, `482` single-wave Wave-4 Fresh business interviews carry `LongId == ""` rather than `NaN`; `exp2_common_sample_and_mechanisms.py` assigns each Fresh record a unique cluster ID in full-panel models (`N = 3,061`, `2,196` firms) and restricts lag/within-firm transitions strictly to non-empty `LongId` rows (`n = 865`, `575` firms).
