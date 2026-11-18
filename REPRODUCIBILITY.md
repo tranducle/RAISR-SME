@@ -1,5 +1,7 @@
 # End-to-End Reproducibility Guide (`RAISR-SME`)
 
+> Companion replication repository for **RAISR-SME: Auditable Cyber-AI Triage and the Limits of Breach-Based Validation** (ICIIT 2027).
+
 ## Environment Requirements
 
 - **Instrument Scoring & Parity (`instrument/`)**: Python 3.9+ standard library (plus Node.js 18+ for JavaScript parity checks and `numpy` for vectorized reference checks).
@@ -19,6 +21,7 @@ Verify NIST CSF 2.0 crosswalk integrity, run the 20,006-vector three-runtime IEE
 ```bash
 python3 analysis/verify_ids.py
 python3 instrument/test_scoring.py -n 20000
+python3 analysis/retrospective_robustness.py
 python3 analysis/test_iciit_upgrades.py
 ```
 
@@ -30,11 +33,12 @@ After downloading the UK Data Archive Stata `.dta` files and Eurostat `isoc_eb_a
 bash analysis/run_all.sh
 ```
 
-`analysis/run_all.sh` runs seven deterministic steps:
+`analysis/run_all.sh` runs eight deterministic steps (plus standalone `retrospective_robustness.py`):
 1. NIST CSF 2.0 catalog crosswalk verification (`analysis/verify_ids.py -w`).
 2. Cross-runtime parity verification over 20,000 random ternary vectors plus 6 canonical archetypes (`instrument/test_scoring.py -n 20000`).
 3. Experiment 1 (`analysis/exp1_formative_and_missingness.py`): UK CSBS skip-routing attribution (`95.44%` pooled) and unrouted VIF/KR-20 diagnostics (`max VIF = 1.9144`).
 4. Experiment 2 (`analysis/exp2_common_sample_and_mechanisms.py`): UK CSLS full-panel (`N = 3,061`, `2,196` firms) and consecutive-wave (`n = 865`, `575` firms) Mundlak, dynamic persistence (`OR = 3.1215`), cross-lagged, bootstrap (`B = 2,000`, `5` seeds), and 500-shuffle placebo tests.
-5. Experiment 3 (`analysis/exp3_sme_size_bridge_and_auc.py`): Split-ballot-normalized UK CSBS size-stratum ORs (`N = 8,086`), Medium-SME CSLS bridge, and 5-fold OOF ROC AUC.
-6. Experiment 4 (`analysis/exp4_sensitivity_and_worked_examples.py`): Five-seed two-stage Monte Carlo simulations (`5 x 10,000` profiles across MCAR/MNAR and Dirichlet regimes), uninflated hierarchical Eurostat check, `20,006`-vector runtime parity, and the 18-employee SME worked diagnostic trace (`Q(R) = 68.208333333`).
-7. Output assertion suite (`analysis/test_iciit_upgrades.py`).
+5. Experiment 3 (`analysis/exp3_sme_size_bridge_and_auc.py`): Split-ballot-normalized UK CSBS size-stratum ORs (`N = 8,086`), Medium-SME CSLS bridge, and 5-fold OOF ROC AUC (`+0.0162`).
+6. Experiment 4 (`analysis/exp4_sensitivity_and_worked_examples.py`): Five-seed two-stage synthetic cohort checks (`5 x 10,000` profiles across masking and Dirichlet regimes), uninflated hierarchical Eurostat check (`+14.54`), `20,006`-vector runtime parity, and the 18-employee SME worked diagnostic trace (`Q(R) = 68.208333333`).
+7. Retrospective robustness (`analysis/retrospective_robustness.py`): Signed half-step boundary flips, equal-domain-centred consensus reference (`0.6820` vs `0.4462`), and score-completion bounds (`87.86%` multi-band span across 50,000 profiles; `[55.25, 81.17]` on the 18-employee trace).
+8. Output assertion suite (`analysis/test_iciit_upgrades.py`).

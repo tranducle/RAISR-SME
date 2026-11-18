@@ -1,0 +1,12 @@
+analysis,condition,n,value
+signed_halfstep,0_to_2,8082,1.0
+signed_halfstep,2_to_5,12081,0.3624699942057777
+signed_halfstep,5_to_10,20247,0.0
+signed_halfstep,10_or_more,9590,0.0
+uniform_reference,naive,50000,0.44618
+uniform_reference,aligned_dk0,50000,0.38794
+uniform_reference,raisr,50000,0.68202
+uniform_reference,dk075,50000,0.70258
+uniform_reference,dk1,50000,0.55116
+uniform_reference,available_case,50000,0.7602800000000001
+uniform_reference,prevalence,50000,0.70214

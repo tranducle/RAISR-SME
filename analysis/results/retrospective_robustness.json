@@ -1,0 +1,247 @@
+{
+  "design": "retrospective exploratory check, designed after original results and reviews",
+  "input_hashes": {
+    "instrument/bank_v1.json": "878cca0a01f87a7db3470725b53bd96977ceada5b6779bd077e86964b3f87d3e",
+    "analysis/results/exp4_sensitivity_and_worked_examples.json": "1d65670573253f12907c46a3d0e1d73e5fa411b0239ebee0fe7a5daa089bdc96",
+    "analysis/exp4_sensitivity_and_worked_examples.py": "da2ba9f5c7f212a49d965343af21f23a38090a55b4941ea9a64daf7606201453"
+  },
+  "seeds": [
+    202702,
+    202703,
+    202704,
+    202705,
+    202706
+  ],
+  "n_profiles": 50000,
+  "boundary_bins": {
+    "0_to_2": {
+      "n": 8082,
+      "flip_count": 8082,
+      "flip_rate": 1.0
+    },
+    "2_to_5": {
+      "n": 12081,
+      "flip_count": 4379,
+      "flip_rate": 0.3624699942057777
+    },
+    "5_to_10": {
+      "n": 20247,
+      "flip_count": 0,
+      "flip_rate": 0.0
+    },
+    "10_or_more": {
+      "n": 9590,
+      "flip_count": 0,
+      "flip_rate": 0.0
+    }
+  },
+  "uniform_reference_concordance_means": {
+    "naive": 0.44618,
+    "aligned_dk0": 0.38794,
+    "raisr": 0.68202,
+    "dk075": 0.70258,
+    "dk1": 0.55116,
+    "available_case": 0.7602800000000001,
+    "prevalence": 0.70214
+  },
+  "uniform_reference_gain_vs_naive_mean": 0.23584,
+  "uniform_reference_gain_vs_naive_seed_range": [
+    0.23220000000000002,
+    0.24160000000000004
+  ],
+  "mean_completion_span_fraction": 0.8786400000000001,
+  "worked_score_completion_interval": {
+    "low": 55.25,
+    "mid": 68.208333333,
+    "high": 81.166666667,
+    "interpretation": "conditional score completions under fixed normative weights; not a confidence interval or event probability"
+  },
+  "seed_results": [
+    {
+      "seed": 202702,
+      "boundary_bins": {
+        "0_to_2": {
+          "n": 1623,
+          "flip_count": 1623,
+          "flip_rate": 1.0
+        },
+        "2_to_5": {
+          "n": 2423,
+          "flip_count": 917,
+          "flip_rate": 0.3784564589352043
+        },
+        "5_to_10": {
+          "n": 4063,
+          "flip_count": 0,
+          "flip_rate": 0.0
+        },
+        "10_or_more": {
+          "n": 1891,
+          "flip_count": 0,
+          "flip_rate": 0.0
+        }
+      },
+      "completion_span_fraction": 0.8783,
+      "mean_interval_width": 27.804108333332604,
+      "uniform_reference_concordance": {
+        "naive": 0.4355,
+        "aligned_dk0": 0.3772,
+        "raisr": 0.6698,
+        "dk075": 0.6998,
+        "dk1": 0.5589,
+        "available_case": 0.7536,
+        "prevalence": 0.6895
+      }
+    },
+    {
+      "seed": 202703,
+      "boundary_bins": {
+        "0_to_2": {
+          "n": 1575,
+          "flip_count": 1575,
+          "flip_rate": 1.0
+        },
+        "2_to_5": {
+          "n": 2483,
+          "flip_count": 874,
+          "flip_rate": 0.35199355618203787
+        },
+        "5_to_10": {
+          "n": 4018,
+          "flip_count": 0,
+          "flip_rate": 0.0
+        },
+        "10_or_more": {
+          "n": 1924,
+          "flip_count": 0,
+          "flip_rate": 0.0
+        }
+      },
+      "completion_span_fraction": 0.878,
+      "mean_interval_width": 27.916491666659997,
+      "uniform_reference_concordance": {
+        "naive": 0.4412,
+        "aligned_dk0": 0.3895,
+        "raisr": 0.6743,
+        "dk075": 0.6994,
+        "dk1": 0.5533,
+        "available_case": 0.7579,
+        "prevalence": 0.6976
+      }
+    },
+    {
+      "seed": 202704,
+      "boundary_bins": {
+        "0_to_2": {
+          "n": 1646,
+          "flip_count": 1646,
+          "flip_rate": 1.0
+        },
+        "2_to_5": {
+          "n": 2395,
+          "flip_count": 843,
+          "flip_rate": 0.35198329853862215
+        },
+        "5_to_10": {
+          "n": 4047,
+          "flip_count": 0,
+          "flip_rate": 0.0
+        },
+        "10_or_more": {
+          "n": 1912,
+          "flip_count": 0,
+          "flip_rate": 0.0
+        }
+      },
+      "completion_span_fraction": 0.8795,
+      "mean_interval_width": 27.7421583333402,
+      "uniform_reference_concordance": {
+        "naive": 0.455,
+        "aligned_dk0": 0.3982,
+        "raisr": 0.6872,
+        "dk075": 0.6979,
+        "dk1": 0.5399,
+        "available_case": 0.7599,
+        "prevalence": 0.7061
+      }
+    },
+    {
+      "seed": 202705,
+      "boundary_bins": {
+        "0_to_2": {
+          "n": 1620,
+          "flip_count": 1620,
+          "flip_rate": 1.0
+        },
+        "2_to_5": {
+          "n": 2404,
+          "flip_count": 886,
+          "flip_rate": 0.3685524126455907
+        },
+        "5_to_10": {
+          "n": 4042,
+          "flip_count": 0,
+          "flip_rate": 0.0
+        },
+        "10_or_more": {
+          "n": 1934,
+          "flip_count": 0,
+          "flip_rate": 0.0
+        }
+      },
+      "completion_span_fraction": 0.8767,
+      "mean_interval_width": 27.9121416666554,
+      "uniform_reference_concordance": {
+        "naive": 0.4468,
+        "aligned_dk0": 0.386,
+        "raisr": 0.6884,
+        "dk075": 0.71,
+        "dk1": 0.5568,
+        "available_case": 0.7675,
+        "prevalence": 0.7079
+      }
+    },
+    {
+      "seed": 202706,
+      "boundary_bins": {
+        "0_to_2": {
+          "n": 1618,
+          "flip_count": 1618,
+          "flip_rate": 1.0
+        },
+        "2_to_5": {
+          "n": 2376,
+          "flip_count": 859,
+          "flip_rate": 0.36153198653198654
+        },
+        "5_to_10": {
+          "n": 4077,
+          "flip_count": 0,
+          "flip_rate": 0.0
+        },
+        "10_or_more": {
+          "n": 1929,
+          "flip_count": 0,
+          "flip_rate": 0.0
+        }
+      },
+      "completion_span_fraction": 0.8807,
+      "mean_interval_width": 27.7677416666653,
+      "uniform_reference_concordance": {
+        "naive": 0.4524,
+        "aligned_dk0": 0.3888,
+        "raisr": 0.6904,
+        "dk075": 0.7058,
+        "dk1": 0.5469,
+        "available_case": 0.7625,
+        "prevalence": 0.7096
+      }
+    }
+  ],
+  "checks": {
+    "original_primary_boundary_reproduced": true,
+    "completion_midpoint_and_containment": true,
+    "zero_unknown_interval_degenerate": true,
+    "halfstep_max_change_bound": true
+  }
+}
